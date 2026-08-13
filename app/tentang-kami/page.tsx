@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import AboutFacility from '@/components/AboutFacility';
-import TeamProfile from '@/components/TeamProfile';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import Link from 'next/link';
@@ -33,9 +32,6 @@ export default function TentangKamiPage() {
 
       {/* Main Content */}
       <AboutFacility />
-
-      {/* Profil Tim Manajemen */}
-      <TeamProfile />
 
       {/* Detailed SEO Story Section */}
       <section className="py-16 bg-white border-t border-charcoal-200">

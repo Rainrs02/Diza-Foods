@@ -23,6 +23,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Beranda', href: '/' },
     { name: 'Tentang Kami', href: '/tentang-kami' },
+    { name: 'Tim Kami', href: '/tim-manajemen' },
     { name: 'Katalog', href: '/katalog-produk' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Blog', href: '/blog' },
@@ -100,14 +101,14 @@ export default function Navbar() {
               })}
             </nav>
 
-            {/* CTA Button */}
+            {/* CTA Button — Compro lime-green pill */}
             <div className="hidden lg:flex items-center space-x-3">
               <Link
                 href="/kalkulator-b2b"
-                className="inline-flex items-center px-4 py-2.5 rounded-lg text-xs xl:text-sm font-bold text-white bg-forest-700 hover:bg-forest-800 shadow-md hover:shadow-emerald-glow transition-all duration-200"
+                className="btn-compro-pill text-sm px-5 py-2.5 shadow-sm"
               >
                 <span>Konsultasi Sekarang</span>
-                <ChevronRight className="ml-1 w-4 h-4" />
+                <ChevronRight className="w-4 h-4" />
               </Link>
             </div>
 
@@ -165,7 +166,7 @@ export default function Navbar() {
                 <Link
                   href="/kalkulator-b2b"
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-white bg-forest-700 hover:bg-forest-800 shadow-md"
+                  className="btn-compro-pill w-full justify-center text-sm py-3"
                 >
                   Konsultasi Sekarang
                 </Link>

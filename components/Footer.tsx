@@ -10,8 +10,22 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-forest-950 text-white pt-16 pb-12 border-t border-forest-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="bg-forest-950 text-white pt-0 pb-12 border-t border-forest-800">
+      {/* Compro-style CTA bar — like the bottom bar on every compro page */}
+      <div className="border-b border-forest-800" style={{background:'#2d5a27'}}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{background:'#0891b2'}}>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <span className="font-semibold text-white text-sm">www.dizafoods.com</span>
+          </div>
+          <Link href="/kalkulator-b2b" className="btn-compro-pill text-sm px-6 py-2.5">
+            Konsultasi Sekarang
+          </Link>
+        </div>
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-forest-800">
           
@@ -43,7 +57,7 @@ export default function Footer() {
 
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold text-sage-300 uppercase tracking-wider">Halaman Utama SEO</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider" style={{color:'#8dc63f'}}>Halaman Utama SEO</h4>
             <ul className="space-y-2 text-xs text-forest-200">
               <li><Link href="/" className="hover:text-white transition-colors">Beranda</Link></li>
               <li><Link href="/tentang-kami" className="hover:text-white transition-colors">Tentang Perusahaan</Link></li>
@@ -60,7 +74,7 @@ export default function Footer() {
 
           {/* Col 3: Contact & Location */}
           <div className="lg:col-span-4 space-y-4">
-            <h4 className="text-sm font-bold text-sage-300 uppercase tracking-wider">Alamat &amp; Kontak Resmi</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider" style={{color:'#8dc63f'}}>Alamat &amp; Kontak Resmi</h4>
             
             <div className="space-y-3 text-xs text-forest-200">
               <div className="flex items-start space-x-2.5">

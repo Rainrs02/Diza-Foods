@@ -10,6 +10,13 @@ export default function Hero() {
       {/* Background Decorative Glow Highlights */}
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-sage-500/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-96 h-96 bg-forest-500/20 rounded-full blur-3xl pointer-events-none" />
+      {/* Compro-style blob shapes */}
+      <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 opacity-20 pointer-events-none" style={{background:'#2d5a27', borderRadius:'0 0 0 80%'}} />
+      <div className="absolute bottom-0 left-0 w-32 h-32 opacity-15 pointer-events-none" style={{background:'#2d5a27', borderRadius:'0 80% 0 0'}} />
+      {/* Compro dot decoration */}
+      <div className="absolute top-10 right-[420px] hidden lg:grid grid-cols-3 gap-1.5 opacity-30 pointer-events-none">
+        {Array.from({length:9}).map((_,i) => <span key={i} className="w-1.5 h-1.5 rounded-full bg-lime-500 block" />)}
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -42,37 +49,34 @@ export default function Hero() {
 
             {/* Bullet Highlights */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-              <div className="flex items-center space-x-2 text-sm text-forest-100">
-                <CheckCircle2 className="w-4 h-4 text-sage-400 flex-shrink-0" />
-                <span>Teknologi Retort Sterilizer Modern</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-forest-100">
-                <CheckCircle2 className="w-4 h-4 text-sage-400 flex-shrink-0" />
-                <span>Tanpa Pengawet Kimia Sintesis</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-forest-100">
-                <CheckCircle2 className="w-4 h-4 text-sage-400 flex-shrink-0" />
-                <span>R&amp;D Kustom Formula &amp; NDA Terjamin</span>
-              </div>
-              <div className="flex items-center space-x-2 text-sm text-forest-100">
-                <CheckCircle2 className="w-4 h-4 text-sage-400 flex-shrink-0" />
-                <span>Pendampingan Izin Edar BPOM &amp; Halal</span>
-              </div>
+              {[
+                'Teknologi Retort Sterilizer Modern',
+                'Tanpa Pengawet Kimia Sintesis',
+                'R&D Kustom Formula & NDA Terjamin',
+                'Pendampingan Izin Edar BPOM & Halal',
+              ].map((item, i) => (
+                <div key={i} className="compro-check-item text-sm text-forest-100">
+                  <div className="compro-check-icon border-lime-500">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-lime-500" />
+                  </div>
+                  <span>{item}</span>
+                </div>
+              ))}
             </div>
 
-            {/* Action Buttons */}
+            {/* Action Buttons — Compro pill style */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center space-y-3 sm:space-y-0 sm:space-x-4 pt-4">
               <a
                 href="#inquiry"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-bold text-forest-900 bg-gradient-to-r from-sage-400 to-emerald-400 hover:from-sage-300 hover:to-emerald-300 shadow-lg hover:shadow-emerald-glow transition-all duration-200"
+                className="btn-compro-pill text-base px-8 py-3.5 shadow-lg hover:shadow-lime-glow"
               >
                 <span>Konsultasi Sekarang</span>
-                <ArrowRight className="ml-2 w-5 h-5" />
+                <ArrowRight className="w-5 h-5" />
               </a>
 
               <a
                 href="#katalog"
-                className="inline-flex items-center justify-center px-7 py-3.5 rounded-xl text-base font-semibold text-white bg-forest-800/80 border border-forest-600 hover:bg-forest-700 transition-all duration-200"
+                className="inline-flex items-center justify-center px-7 py-3.5 rounded-full text-base font-semibold text-white bg-forest-800/80 border border-forest-600 hover:bg-forest-700 transition-all duration-200"
               >
                 <span>Lihat Katalog Produk</span>
               </a>
