@@ -10,22 +10,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-forest-950 text-white pt-0 pb-12 border-t border-forest-800">
-      {/* Compro-style CTA bar — like the bottom bar on every compro page */}
-      <div className="border-b border-forest-800" style={{background:'#2d5a27'}}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-lg flex items-center justify-center flex-shrink-0" style={{background:'#0891b2'}}>
-              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <span className="font-semibold text-white text-sm">www.dizafoods.com</span>
-          </div>
-          <Link href="/kalkulator-b2b" className="btn-compro-pill text-sm px-6 py-2.5">
-            Konsultasi Sekarang
-          </Link>
-        </div>
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
+    <footer className="bg-forest-950 text-white pt-16 pb-12 border-t border-forest-800">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-forest-800">
           
