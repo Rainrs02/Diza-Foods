@@ -146,14 +146,15 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-2">{cat.title}</h3>
-                  <p className="text-xs text-forest-200 leading-relaxed mb-4">{cat.desc}</p>
-
-                  <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden border border-forest-700 bg-forest-900/50 flex items-center justify-center p-2">
-                    <img
-                      src={cat.image}
-                      alt={cat.title}
-                      className="w-full h-full object-contain"
-                    />
+                  <div className="flex flex-col sm:flex-row gap-4 mb-4">
+                    <p className="text-xs text-forest-200 leading-relaxed flex-1">{cat.desc}</p>
+                    <div className="relative w-full sm:w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden border border-forest-700 bg-forest-900/50 flex items-center justify-center p-2">
+                      <img
+                        src={cat.image}
+                        alt={cat.title}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                   </div>
 
                   <div className="bg-forest-900/60 p-3 rounded-xl border border-forest-700 mb-4">
