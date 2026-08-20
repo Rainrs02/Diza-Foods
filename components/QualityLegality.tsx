@@ -102,14 +102,14 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
             </span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
-                className="bg-forest-50/50 border border-forest-100 rounded-xl p-5 flex flex-col items-center text-center hover:border-forest-300 transition-colors"
+                className="bg-forest-50/50 border border-forest-100 rounded-xl p-3 sm:p-5 flex flex-col items-center text-center hover:border-forest-300 transition-colors"
               >
                 {cert.icon ? (
-                  <div className="relative w-16 h-16 mb-3">
+                  <div className="relative w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3">
                     <Image
                       src={cert.icon}
                       alt={cert.title}
@@ -118,17 +118,17 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
                     />
                   </div>
                 ) : (
-                  <div className="w-16 h-16 mb-3 rounded-full bg-forest-100 flex items-center justify-center">
-                    <Award className="w-8 h-8 text-forest-600" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 mb-2 sm:mb-3 rounded-full bg-forest-100 flex items-center justify-center">
+                    <Award className="w-6 h-6 sm:w-8 sm:h-8 text-forest-600" />
                   </div>
                 )}
-                <div className="mb-2">
-                  <span className="text-[10px] font-extrabold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-200 uppercase">
+                <div className="mb-1.5 sm:mb-2">
+                  <span className="text-[8px] sm:text-[10px] font-extrabold text-amber-700 bg-amber-100 px-1.5 sm:px-2 py-0.5 rounded-full border border-amber-200 uppercase">
                     {cert.status}
                   </span>
                 </div>
-                <h4 className="font-bold text-forest-900 text-sm mb-1">{cert.title}</h4>
-                <p className="text-[11px] text-charcoal-600 leading-normal">{cert.desc}</p>
+                <h4 className="font-bold text-forest-900 text-[11px] sm:text-sm mb-1">{cert.title}</h4>
+                <p className="text-[9px] sm:text-[11px] text-charcoal-600 leading-normal">{cert.desc}</p>
               </div>
             ))}
           </div>
