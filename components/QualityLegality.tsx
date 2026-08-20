@@ -13,10 +13,10 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
       icon: '/assets/canva/Halal.png',
     },
     {
-      title: 'Sertifikasi LSHS',
+      title: 'Sertifikasi SLHS',
       status: 'On Proses',
-      desc: 'Lembaga Sertifikasi Halal & Standar Mutu Suplai Pangan.',
-      icon: null,
+      desc: 'Bukti resmi dari Dinas Kesehatan bahwa tempat pengolahan pangan telah memenuhi standar kebersihan, kesehatan, dan keamanan makanan.',
+      icon: '/assets/canva/logo SLhs.png',
     },
     {
       title: 'Sertifikasi CCPOB',
@@ -34,6 +34,12 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
       title: 'Sertifikasi PMR-BPOM',
       status: 'On Proses',
       desc: 'Program Manajemen Risiko Keamanan Pangan Olahan Berkelanjutan.',
+      icon: '/assets/canva/pmr.png',
+    },
+    {
+      title: 'ISO 22000',
+      status: 'On Proses',
+      desc: 'Standar Sistem Manajemen Keamanan Pangan Internasional.',
       icon: '/assets/canva/ISO.png',
     },
   ];
@@ -96,7 +102,7 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
