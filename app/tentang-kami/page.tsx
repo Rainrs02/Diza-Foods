@@ -55,6 +55,7 @@ export default function TentangKamiPage() {
             </div>
           </div>
         </div>
+        </div>
       </section>
 
       {/* Filosofi D.I.Z.A */}
