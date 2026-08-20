@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { Package, Sparkles, Layers, Box, CheckCircle2, ChevronRight, Scale, ShieldCheck } from 'lucide-react';
 
 export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
-  const [activeTab, setActiveTab] = useState<'categories' | 'developed'>('categories');
+  const [activeTab, setActiveTab] = useState<'categories' | 'packaging'>('categories');
 
   const categories = [
     {
