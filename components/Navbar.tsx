@@ -4,11 +4,12 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { PhoneCall, ChevronRight, Home, Package, Info, MessageCircle, Users, HelpCircle, FileText } from 'lucide-react';
+import { PhoneCall, ChevronRight, Home, Package, Info, MessageCircle, Users, HelpCircle, FileText, Menu, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -88,9 +89,78 @@ export default function Navbar() {
               </Link>
             </div>
 
+            {/* Mobile Menu Button */}
+            <div className="flex lg:hidden">
+              <button
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                className="p-2.5 rounded-lg text-charcoal-700 hover:text-forest-700 hover:bg-forest-50 focus:outline-none"
+                aria-label="Toggle Navigation Menu"
+              >
+                {isMobileMenuOpen ? (
+                  <X className="w-6 h-6" />
+                ) : (
+                  <Menu className="w-6 h-6" />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </header>
+
+      {/* Mobile Navigation Drawer */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25 }}
+            className="lg:hidden fixed top-[96px] left-0 w-full bg-white border-b border-charcoal-200 shadow-2xl z-40 overflow-hidden"
+          >
+            <div className="px-5 py-6 space-y-4 max-w-md mx-auto">
+              <div className="flex flex-col space-y-1">
+                {navLinks.map((link) => {
+                  const isActive = pathname === link.href;
+                  return (
+                    <Link
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={`px-4 py-3 rounded-lg text-sm font-semibold transition-colors flex items-center justify-between ${
+                        isActive
+                          ? 'bg-forest-100 text-forest-800 font-bold'
+                          : 'text-charcoal-800 hover:bg-forest-50 hover:text-forest-700'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      <ChevronRight className="w-4 h-4 text-charcoal-400" />
+                    </Link>
+                  );
+                })}
+              </div>
+
+              <div className="pt-4 border-t border-charcoal-200 space-y-3">
+                <Link
+                  href="/konsultasi"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="btn-compro-pill w-full justify-center text-sm py-3"
+                >
+                  Konsultasi Sekarang
+                </Link>
+                <a
+                  href="https://wa.me/62895405233323"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-forest-700 bg-forest-50 border border-forest-200 hover:bg-forest-100"
+                >
+                  <PhoneCall className="w-4 h-4 mr-2" />
+                  Hubungi WhatsApp (Fast Response)
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* Floating Bottom Nav (Mobile Only) */}
       <nav className="lg:hidden fixed bottom-0 left-0 w-full bg-white border-t border-charcoal-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] z-40 px-1 py-2 pb-safe">
