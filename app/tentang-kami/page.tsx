@@ -23,26 +23,32 @@ export default function TentangKamiPage() {
           <span className="text-xs font-bold text-sage-300 uppercase tracking-widest bg-forest-800 px-3.5 py-1.5 rounded-full border border-forest-700">
             Profil Perusahaan
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Tentang PT Diza Pangan Bersama</h1>
-          <p className="text-base text-forest-200 max-w-3xl mx-auto leading-relaxed">
-            Berdiri sejak 8 Agustus 2026 di Jatiasih, Bekasi, PT Diza Pangan Bersama (Diza Foods) hadir untuk menjawab kebutuhan industri kuliner akan layanan maklon makanan siap saji dengan teknologi sterilisasi modern (retort). Berkomitmen untuk menjadi mitra strategis bagi para pelaku usaha makanan dalam memperluas jangkauan produk mereka secara higienis dan tahan lama tanpa bahan pengawet.
-          </p>
+          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Profil Lengkap Diza Foods</h1>
         </div>
       </section>
 
-      {/* Makna Nama DIZA FOODS */}
+      {/* Tentang Kami & Makna Nama DIZA FOODS */}
       <section className="py-16 bg-white relative">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <h2 className="text-3xl font-extrabold text-charcoal-900 text-center mb-8">Filosofi Nama <span className="text-forest-700">DIZA FOODS</span></h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-forest-50 p-6 rounded-2xl border border-forest-100 shadow-sm text-center">
-              <div className="text-4xl font-black text-forest-700 mb-3">DIZA</div>
-              <p className="text-sm text-charcoal-700">Memiliki makna <strong>Bersinar, Gembira / Membawa Kebahagiaan</strong>.</p>
-            </div>
-            <div className="bg-forest-50 p-6 rounded-2xl border border-forest-100 shadow-sm text-center">
-              <div className="text-4xl font-black text-forest-700 mb-3">FOODS</div>
-              <p className="text-sm text-charcoal-700">Bermakna <strong>Makanan / Produk Olahan Makanan</strong>.</p>
-            </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-3xl font-extrabold text-charcoal-900 mb-6">Tentang Kami</h2>
+            <p className="text-base text-charcoal-700 leading-relaxed font-medium">
+              Berdiri sejak 8 Agustus 2026 di Jatiasih, Bekasi, PT Diza Pangan Bersama (Diza Foods) hadir untuk menjawab kebutuhan industri kuliner akan layanan maklon makanan siap saji dengan teknologi sterilisasi modern (retort). Berkomitmen untuk menjadi mitra strategis bagi para pelaku usaha makanan dalam memperluas jangkauan produk mereka secara higienis dan tahan lama tanpa bahan pengawet.
+            </p>
+          </div>
+
+          <div className="space-y-8 pt-6 border-t border-charcoal-100">
+            <h3 className="text-2xl font-extrabold text-charcoal-900 text-center">Filosofi Nama <span className="text-forest-700">DIZA FOODS</span></h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="bg-forest-50 p-6 rounded-2xl border border-forest-100 shadow-sm text-center">
+                <div className="text-4xl font-black text-forest-700 mb-3">DIZA</div>
+                <p className="text-sm text-charcoal-700">Memiliki makna <strong>Bersinar, Gembira / Membawa Kebahagiaan</strong>.</p>
+              </div>
+              <div className="bg-forest-50 p-6 rounded-2xl border border-forest-100 shadow-sm text-center">
+                <div className="text-4xl font-black text-forest-700 mb-3">FOODS</div>
+                <p className="text-sm text-charcoal-700">Bermakna <strong>Makanan / Produk Olahan Makanan</strong>.</p>
+              </div>
             <div className="bg-emerald-50 p-6 rounded-2xl border border-emerald-200 shadow-sm text-center md:col-span-3 lg:col-span-1">
               <div className="text-2xl font-black text-emerald-800 mb-3">DIZA FOODS</div>
               <p className="text-sm text-charcoal-700">Menyampaikan harapan bahwa apa yang kami sajikan bisa membawa harapan, kebahagiaan, keceriaan, sumber rezeki, kepuasan dan kenikmatan bagi siapapun. Dari mulai pegawai, vendor, hingga Konsumen.</p>

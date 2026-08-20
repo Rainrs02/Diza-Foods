@@ -82,56 +82,7 @@ export default function AboutFacility({ bgOverlay = 'none' }: { bgOverlay?: 'bg1
           </div>
         </div>
 
-        {/* Vision, Mission & Values — Compro card style */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
-          {/* Visi — dark green card (compro "Our Vision") */}
-          <div className="rounded-2xl p-6 hover:shadow-lg transition-shadow" style={{background:'#2d5a27'}}>
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg mb-4 border border-white/30" style={{background:'rgba(255,255,255,0.1)', color:'#8dc63f'}}>
-              V
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">Visi Perusahaan</h3>
-            <p className="text-sm leading-relaxed text-white/85">
-              Menjadi perusahaan maklon pangan sterilisasi (retort) terkemuka di Indonesia yang mengutamakan kualitas tinggi, higienitas ketat, dan inovasi berkelanjutan.
-            </p>
-          </div>
-
-          {/* Misi — lime green card (compro "Misi Kami") */}
-          <div className="rounded-2xl p-6 hover:shadow-lg transition-shadow" style={{background:'#7ab317'}}>
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg mb-4 border border-white/30" style={{background:'rgba(255,255,255,0.15)', color:'white'}}>
-              M
-            </div>
-            <h3 className="text-xl font-bold text-white mb-3">Misi Utama</h3>
-            <ul className="text-sm text-white space-y-2.5">
-              {[
-                'Layanan maklon berstandar higienis tinggi & aman dikonsumsi.',
-                'Mendukung UMKM & brand kuliner lewat fleksibilitas produksi.',
-                'Mengembangkan teknologi pengolahan pangan yang efisien.',
-              ].map((m, i) => (
-                <li key={i} className="compro-check-item">
-                  <div className="compro-check-icon border-white/60 mt-0.5">
-                    <CheckCircle className="w-3 h-3 text-white" />
-                  </div>
-                  <span>{m}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Nilai Inti — off-white card */}
-          <div className="rounded-2xl p-6 border hover:shadow-lg transition-shadow" style={{background:'white', borderColor:'rgba(45,90,39,0.15)'}}>
-            <div className="w-10 h-10 rounded-xl flex items-center justify-center font-bold text-lg mb-4" style={{background:'#2d5a27', color:'#8dc63f'}}>
-              N
-            </div>
-            <h3 className="text-xl font-bold mb-3" style={{color:'#2d5a27'}}>Nilai Inti (Core Values)</h3>
-            <div className="grid grid-cols-2 gap-3 pt-1">
-              {['✨ HIGIENIS','🤝 TERPERCAYA','💡 INOVATIF','🎯 PROFESIONAL'].map((v) => (
-                <div key={v} className="p-2.5 rounded-xl text-center font-bold text-xs border" style={{background:'#f5f7f0', color:'#2d5a27', borderColor:'rgba(45,90,39,0.15)'}}>
-                  {v}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        
 
         {/* Plant Infrastructure Specs Grid */}
         <div id="fasilitas" className="pt-6">
