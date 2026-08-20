@@ -1,15 +1,16 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { MessageSquare, FileCheck, Beaker, CheckCircle2, ShieldCheck, Factory, Truck } from 'lucide-react';
 
-export default function WorkflowSOP() {
+export default function WorkflowSOP({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const steps = [
     {
       num: '01',
       icon: MessageSquare,
       title: 'Konsultasi Awal & Konsep',
-      desc: 'Diskusi mendalam mengenai kategori produk, profil rasa, pilihan kemasan retort, dan target harga pokok.',
+      desc: 'Diskusi mendalam mengenai kategori produk, profil rasa, pilihan kemasan retort/pasteurisasi, dan target harga pokok produksi.',
     },
     {
       num: '02',
@@ -21,25 +22,25 @@ export default function WorkflowSOP() {
       num: '03',
       icon: Beaker,
       title: 'Formulasi & Sampel R&D',
-      desc: 'Pengembangan dan uji coba sampel resep oleh Tim R&D Food Tech (estimasi pengerjaan 2–3 minggu).',
+      desc: 'Pengembangan dan uji coba sampel resep oleh Tim R&D Food Tech kami. Estimasi pengerjaan 2–3 minggu.',
     },
     {
       num: '04',
       icon: CheckCircle2,
       title: 'ACC Sampel Klien',
-      desc: 'Klien melakukan organoleptik test & ACC sampel akhir hingga mencapai rasa, viskositas, dan rasa yang diinginkan.',
+      desc: 'Klien melakukan uji organoleptik & ACC sampel akhir hingga mencapai rasa, viskositas, dan tekstur yang diinginkan.',
     },
     {
       num: '05',
       icon: ShieldCheck,
       title: 'Pendampingan Legalitas',
-      desc: 'Proses pendampingan perizinan seperti izin edar BPOM-MD, sertifikasi Halal, dan kesiapan label kemasan.',
+      desc: 'Proses pendampingan perizinan seperti izin edar BPOM-MD, sertifikasi Halal, dan kesiapan label kemasan produk.',
     },
     {
       num: '06',
       icon: Factory,
       title: 'Produksi Massal & QC',
-      desc: 'Proses produksi skala industri menggunakan mesin retort sterilizer modern dengan pengawasan batch number ketat.',
+      desc: 'Proses produksi skala industri menggunakan mesin retort sterilizer & pasteurisasi modern dengan kapasitas 20 ton/bulan.',
     },
     {
       num: '07',
@@ -50,8 +51,14 @@ export default function WorkflowSOP() {
   ];
 
   return (
-    <section id="alur" className="py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="alur" className="py-20 bg-white relative overflow-hidden">
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">

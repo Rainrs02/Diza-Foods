@@ -16,20 +16,20 @@ export default function FAQPage() {
       <Navbar />
       
       {/* Header Banner */}
-      <section className="bg-forest-900 text-white py-16 bg-dark-grid relative">
+      <section className="py-16 pt-24 bg-charcoal-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-          <span className="text-xs font-bold text-sage-300 uppercase tracking-widest bg-forest-800 px-3.5 py-1.5 rounded-full border border-forest-700">
+          <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border" style={{color:'#2d5a27', background:'rgba(45,90,39,0.08)', borderColor:'rgba(45,90,39,0.2)'}}>
             Frequently Asked Questions
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white">Pusat Informasi &amp; FAQ Maklon</h1>
-          <p className="text-base text-forest-200 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight" style={{color:'#2d5a27'}}>Pusat Informasi &amp; FAQ Maklon</h1>
+          <p className="text-base text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Temukan jawaban lengkap seputar sterilisasi retort, MOQ, kerahasiaan resep, serta alur perizinan legalitas produk.
           </p>
         </div>
       </section>
 
-      {/* Main Accordion */}
-      <FAQSection />
+      {/* Main FAQ Component */}
+      <FAQSection bgOverlay="bg1" />
 
       <Footer />
       <FloatingWhatsApp />

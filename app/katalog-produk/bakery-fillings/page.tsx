@@ -17,21 +17,22 @@ export default function BakeryFillingsPage() {
       <Navbar />
       
       {/* Header Banner */}
-      <section className="bg-forest-900 text-white py-16 bg-dark-grid relative">
+      <section className="py-16 pt-24 bg-charcoal-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-          <span className="text-xs font-bold text-sage-300 uppercase tracking-widest bg-forest-800 px-3.5 py-1.5 rounded-full border border-forest-700">
+          <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border" style={{color:'#2d5a27', background:'rgba(45,90,39,0.08)', borderColor:'rgba(45,90,39,0.2)'}}>
             Dedicated Product Category
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white">Bakery Fillings &amp; Industrial Toppings</h1>
-          <p className="text-base text-forest-200 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight" style={{color:'#2d5a27'}}>Bakery Fillings &amp; Industrial Toppings</h1>
+          <p className="text-base text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Solusi pasokan isian roti, pastry, dan selai buah/cokelat berkualitas tinggi dengan kestabilan pemanggangan (bake-stable) presisi.
           </p>
         </div>
       </section>
 
       {/* Main SEO Content */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <div className="space-y-4">
@@ -54,7 +55,7 @@ export default function BakeryFillingsPage() {
               </p>
               <div className="pt-2">
                 <Link
-                  href="/kalkulator-b2b"
+                  href="/konsultasi"
                   className="inline-flex items-center px-5 py-2.5 rounded-xl bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs shadow-md"
                 >
                   <span>Minta Sampel Bakery Fillings</span>
@@ -72,3 +73,4 @@ export default function BakeryFillingsPage() {
     </main>
   );
 }
+

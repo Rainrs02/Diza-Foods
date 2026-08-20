@@ -40,18 +40,18 @@ export default function Navbar() {
               B2B Retort Factory
             </span>
             <span className="hidden sm:inline text-forest-200">
-              Pabrik Maklon Pangan Sterilisasi Kedap Udara — Kapasitas 6–10 Ton/Bulan
+              Pabrik Maklon Pangan Sterilisasi Kedap Udara — Kapasitas 20 Ton/Bulan
             </span>
           </div>
           <div className="flex items-center space-x-4">
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/62895405233323"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-1 hover:text-sage-300 transition-colors font-medium"
             >
               <PhoneCall className="w-3.5 h-3.5 text-sage-400" />
-              <span>Hotline B2B: 0812-3456-7890</span>
+              <span>Hotline B2B: 0895-4052-33323</span>
             </a>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Navbar() {
             {/* CTA Button — Compro lime-green pill */}
             <div className="hidden lg:flex items-center space-x-3">
               <Link
-                href="/kalkulator-b2b"
+                href="/konsultasi"
                 className="btn-compro-pill text-sm px-5 py-2.5 shadow-sm"
               >
                 <span>Konsultasi Sekarang</span>
@@ -164,14 +164,14 @@ export default function Navbar() {
 
               <div className="pt-4 border-t border-charcoal-200 space-y-3">
                 <Link
-                  href="/kalkulator-b2b"
+                  href="/konsultasi"
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="btn-compro-pill w-full justify-center text-sm py-3"
                 >
                   Konsultasi Sekarang
                 </Link>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/62895405233323"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-forest-700 bg-forest-50 border border-forest-200 hover:bg-forest-100"
@@ -187,3 +187,4 @@ export default function Navbar() {
     </>
   );
 }
+

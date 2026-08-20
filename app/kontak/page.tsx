@@ -6,7 +6,7 @@ import { MapPin, Phone, Mail, Clock, ExternalLink, MessageCircle, Building2 } fr
 
 export const metadata: Metadata = {
   title: 'Kontak Resmi & Lokasi Pabrik | PT Diza Pangan Bersama',
-  description: 'Alamat pabrik resmi PT Diza Pangan Bersama di Jl. Dr. Ratna No. 88 Jatikramat Jatiasih Bekasi. Hotline WhatsApp B2B 0812-3456-7890 dan konsultasi R&D.',
+  description: 'Alamat pabrik resmi PT Diza Pangan Bersama di Jl. Dr. Ratna No. 88 Jatikramat Jatiasih Bekasi. Hotline WhatsApp B2B 0895-4052-33323 dan konsultasi R&D.',
   keywords: ['kontak diza foods', 'alamat pabrik diza pangan bersama', 'pabrik maklon bekasi jatiasih', 'telepon maklon retort'],
 };
 
@@ -16,21 +16,22 @@ export default function KontakPage() {
       <Navbar />
       
       {/* Header Banner */}
-      <section className="bg-forest-900 text-white py-16 bg-dark-grid relative">
+      <section className="py-16 pt-24 bg-charcoal-50 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3">
-          <span className="text-xs font-bold text-sage-300 uppercase tracking-widest bg-forest-800 px-3.5 py-1.5 rounded-full border border-forest-700">
+          <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border" style={{color:'#2d5a27', background:'rgba(45,90,39,0.08)', borderColor:'rgba(45,90,39,0.2)'}}>
             Official B2B Contact &amp; Location
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white">Hubungi PT Diza Pangan Bersama</h1>
-          <p className="text-base text-forest-200 max-w-2xl mx-auto">
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight" style={{color:'#2d5a27'}}>Hubungi PT Diza Pangan Bersama</h1>
+          <p className="text-base text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Kunjungi pabrik kami di Jatikramat Bekasi atau diskusikan kebutuhan produksi massal Anda langsung dengan tim konsultan maklon kami.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
             
             {/* Left: Official Contact Card */}
@@ -65,7 +66,7 @@ export default function KontakPage() {
                   <Phone className="w-5 h-5 text-forest-700 flex-shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-charcoal-900 text-sm block mb-0.5">Hotline WhatsApp B2B:</strong>
-                    <p className="font-mono text-sm font-bold text-forest-800">0812-3456-7890</p>
+                    <p className="font-mono text-sm font-bold text-forest-800">0895-4052-33323</p>
                     <span className="text-[11px] text-charcoal-500">Respon cepat hari kerja Senin - Sabtu</span>
                   </div>
                 </div>
@@ -80,7 +81,7 @@ export default function KontakPage() {
               </div>
 
               <a
-                href="https://wa.me/6281234567890?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20jadwal%20kunjungan%20pabrik%20/%20konsultasi%20maklon."
+                href="https://wa.me/62895405233323?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20jadwal%20kunjungan%20pabrik%20/%20konsultasi%20maklon."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md flex items-center justify-center space-x-2"

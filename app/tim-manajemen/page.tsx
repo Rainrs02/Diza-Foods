@@ -17,28 +17,21 @@ export default function TimManajemenPage() {
     <main className="min-h-screen flex flex-col" style={{background:'#f5f7f0'}}>
       <Navbar />
       
-      {/* Header Banner — Compro style */}
-      <section className="text-white py-16 bg-dark-grid relative overflow-hidden" style={{background:'#2d5a27'}}>
-        {/* Compro blob decorations */}
-        <div className="absolute top-0 right-0 w-40 h-40 pointer-events-none opacity-20" style={{background:'#1a3a18', borderRadius:'0 0 0 80%'}} />
-        <div className="absolute bottom-0 left-0 w-28 h-28 pointer-events-none opacity-20" style={{background:'#7ab317', borderRadius:'0 60% 0 0'}} />
-        {/* Dot decoration */}
-        <div className="absolute top-8 right-64 hidden lg:grid grid-cols-3 gap-1.5 opacity-30 pointer-events-none">
-          {Array.from({length:9}).map((_,i) => <span key={i} className="w-1.5 h-1.5 rounded-full block" style={{background:'#8dc63f'}} />)}
-        </div>
+      {/* Header Banner */}
+      <section className="py-16 pt-24 relative overflow-hidden" style={{background:'#f5f7f0'}}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 relative z-10">
-          <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border border-white/20" style={{background:'rgba(255,255,255,0.1)', color:'#8dc63f'}}>
+          <span className="text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full border" style={{color:'#2d5a27', background:'rgba(45,90,39,0.08)', borderColor:'rgba(45,90,39,0.2)'}}>
             Leadership &amp; Technical Expertise
           </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white">Tim Kami</h1>
-          <p className="text-base max-w-2xl mx-auto" style={{color:'rgba(255,255,255,0.8)'}}>
+          <h1 className="text-3xl sm:text-5xl font-black tracking-tight" style={{color:'#2d5a27'}}>Tim Kami</h1>
+          <p className="text-base text-charcoal-600 max-w-2xl mx-auto leading-relaxed">
             Kombinasi pengalaman teknis sterilisasi pangan belasan tahun dan keahlian penetrasi jaringan distribusi B2B nasional.
           </p>
         </div>
       </section>
 
       {/* Main Content */}
-      <TeamProfile />
+      <TeamProfile bgOverlay="bg1" />
 
       {/* CTA Section */}
       <section className="py-16 bg-white border-t" style={{borderColor:'rgba(45,90,39,0.12)'}}>
@@ -49,7 +42,7 @@ export default function TimManajemenPage() {
           </p>
           <div className="pt-2">
             <Link
-              href="/kalkulator-b2b"
+              href="/konsultasi"
               className="btn-compro-pill text-sm px-8 py-3.5 shadow-md inline-flex items-center gap-2"
             >
               <span>Ajukan Form R&amp;D Sampel</span>
@@ -64,4 +57,5 @@ export default function TimManajemenPage() {
     </main>
   );
 }
+
 

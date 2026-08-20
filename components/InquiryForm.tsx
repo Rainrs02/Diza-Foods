@@ -4,7 +4,7 @@ import { useInquiryStore } from '@/store/useInquiryStore';
 import { motion } from 'framer-motion';
 import { MessageCircle, Calculator, Clock, ShieldCheck, Factory, Sparkles, CheckCircle2, RotateCcw } from 'lucide-react';
 
-export default function InquiryForm() {
+export default function InquiryForm({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const {
     category,
     packaging,
@@ -50,21 +50,14 @@ export default function InquiryForm() {
   };
 
   return (
-    <section id="inquiry" className="py-20 bg-forest-50 relative border-t border-b border-forest-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
-          <span className="text-xs font-bold text-forest-700 uppercase tracking-widest bg-white px-3.5 py-1.5 rounded-full border border-forest-200 shadow-sm">
-            Kalkulator &amp; Form Konsultasi Interactive
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight">
-            Kalkulator Estimasi Layanan Maklon B2B
-          </h2>
-          <p className="text-base text-charcoal-600 leading-relaxed">
-            Pilih spesifikasi produk, jenis kemasan, dan volume produksi untuk langsung menghasilkan draf estimasi pesanan dan konsultasi resmi via WhatsApp.
-          </p>
-        </div>
+    <section id="inquiry" className="py-20 bg-forest-50 relative border-t border-b border-forest-100 overflow-hidden">
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           

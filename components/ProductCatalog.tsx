@@ -4,41 +4,45 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Package, Sparkles, Layers, Box, CheckCircle2, ChevronRight, Scale, ShieldCheck } from 'lucide-react';
 
-export default function ProductCatalog() {
-  const [activeTab, setActiveTab] = useState<'categories' | 'packaging'>('categories');
+export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
+  const [activeTab, setActiveTab] = useState<'categories' | 'developed'>('categories');
 
   const categories = [
     {
-      id: 'sauce-paste',
-      title: 'Saus & Pasta Skala Industri',
-      badge: 'Bestseller B2B',
-      desc: 'Saus sambal, saus tomat, saus mentai, saus barbeque, pasta kari, dan bumbu dasar siap pakai dengan formulasi khusus presisi tinggi.',
-      target: 'Restoran Franchise, Kedai Modern, Retail Brand',
-      features: ['Tahan Suhu Ruang', 'Viskositas Kustom', 'Formulasi Khas Brand'],
-    },
-    {
-      id: 'seasoning-broth',
-      title: 'Bumbu Masak Cair & Kaldu',
-      badge: 'HORECA Supply',
-      desc: 'Aneka bumbu opor, rendang, soto, dan kaldu cair steril konsentrat yang memudahkan operasional dapur terpusat (central kitchen).',
-      target: 'Central Kitchen, Hotel, Katering Massal',
-      features: ['Efisiensi Dapur 80%', 'Konsistensi Rasa 100%', 'Format Bulk 1-5kg'],
-    },
-    {
-      id: 'rte-meals',
-      title: 'Makanan Siap Saji (Ready-to-Eat)',
-      badge: 'Retort Specialty',
-      desc: 'Lauk pauk steril dalam kemasan kedap udara (seperti daging rendang, ayam ungkep, olahan daging & sayur) yang awet tanpa pengawet.',
-      target: 'Supermarket, Ekspor, Travel Food, Retail RTE',
-      features: ['Shelf-Life 12-24 Bulan', 'Tanpa Refrigerasi', 'Rasa Otentik Terjaga'],
-    },
-    {
-      id: 'bakery-fillings',
-      title: 'Bakery Fillings & Toppings',
-      badge: 'Industrial Grade',
-      desc: 'Isian roti dan selai tahan lama berbasis buah segar atau cokelat berkualitas untuk industri katering dan pabrik roti berskala besar.',
+      id: 'bakery',
+      title: 'Filling Bakery & Toppings',
+      badge: 'Industri Bakery',
+      desc: 'Filling bakery sweet (selai serikaya, pasta kacang merah/hijau, pineapple pie, apple pie) dan savory (chicken baso, ayam suwir, beef teriyaki) untuk industri roti dan katering.',
       target: 'Pabrik Bakery, Industri Roti, Katering Premium',
-      features: ['Bake-Stable Formulation', 'Anti-Separasi Minyak', 'Profil Manis Terkontrol'],
+      image: '/assets/canva/produk (2).png',
+      features: ['Bake-Stable Formulation', 'MOQ Rendah', 'Sweet & Savory Variant'],
+    },
+    {
+      id: 'sauce-sambal',
+      title: 'Sauce & Sambal',
+      badge: 'Bestseller B2B',
+      desc: 'Sambal bawang, terasi, ijo padang, korek merah, bangkok, matah & berbagai sauce (blackpepper, mushroom, barbeque, gulai, teriyaki, yakiniku, salted egg) untuk kebutuhan HORECA & retail.',
+      target: 'Restoran, Retail Brand, HORECA',
+      image: '/assets/canva/produk (3).png',
+      features: ['13+ Varian Sambal & Sauce', 'Tahan Suhu Ruang', 'Formulasi Khas Brand'],
+    },
+    {
+      id: 'bumbu-pasta',
+      title: 'Bumbu Pasta',
+      badge: 'HORECA Supply',
+      desc: 'Bumbu gulai, kebuli, krengseng, sate, nasi goreng, woku, rica, rendang, dan bumbu hitam madura. Konsistensi rasa terjaga untuk operasional dapur terpusat.',
+      target: 'Central Kitchen, Hotel, Katering Massal',
+      image: '/assets/canva/produk (4).png',
+      features: ['9+ Varian Bumbu', 'Konsistensi Rasa 100%', 'Format Bulk Tersedia'],
+    },
+    {
+      id: 'rte',
+      title: 'RTE Foods (Ready To Eat)',
+      badge: 'Retort Specialty',
+      desc: 'Rendang daging/ayam, ayam rica kemangi, ayam gulai kari, ayam betutu, tuna woku/rica/rendang, cakalang woku, beef & chicken teriyaki. Awet tanpa pengawet hingga 1-2 tahun.',
+      target: 'Supermarket, Ekspor, Travel Food, Retail RTE',
+      image: '/assets/canva/produk (1).png',
+      features: ['Lauk Siap Saji', 'Tanpa Pengawet Sintetis', 'Kemasan Steril'],
     },
   ];
 
@@ -74,7 +78,13 @@ export default function ProductCatalog() {
   ];
 
   return (
-    <section id="katalog" className="py-20 bg-forest-900 text-white relative bg-dark-grid">
+    <section id="katalog" className="py-20 bg-forest-900 text-white relative overflow-hidden">
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}

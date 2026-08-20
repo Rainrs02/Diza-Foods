@@ -1,43 +1,75 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Award, ShieldCheck, CheckCircle2, Clock, Search, Shield, Cpu, RefreshCw } from 'lucide-react';
 
-export default function QualityLegality() {
+export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const certifications = [
-    { title: 'Sertifikat Halal MUI', status: 'On Progress', desc: 'Jaminan kehalalan bahan baku & alur produksi sterilisasi.' },
-    { title: 'Sertifikasi LSHS', status: 'On Progress', desc: 'Lembaga Sertifikasi Halal & Standar Mutu Suplai Pangan.' },
-    { title: 'Sertifikasi CCPOB', status: 'On Progress', desc: 'Cara Pembuatan Obat & Makanan Olahan yang Baik (Badan POM).' },
-    { title: 'Sertifikasi HACCP', status: 'On Progress', desc: 'Sistem Analisis Bahaya & Pengendalian Titik Kritis Keamanan Pangan.' },
-    { title: 'Sertifikasi PMR-BPOM', status: 'On Progress', desc: 'Program Manajemen Risiko Keamanan Pangan Olahan Berkelanjutan.' },
+    {
+      title: 'Sertifikat Halal',
+      status: 'On Proses',
+      desc: 'Jaminan kehalalan bahan baku & alur produksi sesuai standar syariat.',
+      icon: '/assets/canva/Halal.png',
+    },
+    {
+      title: 'Sertifikasi LSHS',
+      status: 'On Proses',
+      desc: 'Lembaga Sertifikasi Halal & Standar Mutu Suplai Pangan.',
+      icon: null,
+    },
+    {
+      title: 'Sertifikasi CCPOB',
+      status: 'On Proses',
+      desc: 'Cara Produksi Makanan Olahan yang Baik (Badan POM).',
+      icon: '/assets/canva/B POM.png',
+    },
+    {
+      title: 'Sertifikasi HACCP',
+      status: 'On Proses',
+      desc: 'Sistem Analisis Bahaya & Pengendalian Titik Kritis Keamanan Pangan.',
+      icon: '/assets/canva/HACCP.png',
+    },
+    {
+      title: 'Sertifikasi PMR-BPOM',
+      status: 'On Proses',
+      desc: 'Program Manajemen Risiko Keamanan Pangan Olahan Berkelanjutan.',
+      icon: '/assets/canva/ISO.png',
+    },
   ];
 
   const qaSteps = [
     {
       icon: Shield,
-      title: 'Standar Kebersihan APD Ketat',
-      desc: 'Seluruh karyawan wajib mengenakan APD steril lengkap (hairnet, masker khusus, sarung tangan food-grade, dan sepatu steril) serta melewati bilik Air Shower.',
+      title: 'Standar Kebersihan & Higienitas',
+      desc: 'Seluruh proses produksi dijalankan secara efektif, efisien, higienis, dan berorientasi pada peningkatan mutu berkelanjutan sesuai standar keamanan pangan nasional.',
     },
     {
       icon: Cpu,
-      title: 'Sterilisasi Retort Thermal Processing',
-      desc: 'Proses pemanasan autoclave retort dengan kontrol suhu & tekanan presisi tinggi yang mengeliminasi bakteri pembusuk tanpa merusak cita rasa asli.',
+      title: 'Sterilisasi Retort & Pasteurisasi',
+      desc: 'Teknologi sterilisasi suhu tinggi (121–135°C) dan tekanan dalam wadah kedap udara yang mematikan seluruh mikroorganisme tanpa mengubah cita rasa asli produk.',
     },
     {
       icon: RefreshCw,
-      title: 'Traceability System (Pelacakan Batch)',
-      desc: 'Pencetakan nomor lot & batch produksi secara akurat pada setiap kemasan untuk kemudahan audit dan kendali mutu yang optimal.',
+      title: 'Konsistensi Rasa & Kualitas',
+      desc: 'Menghasilkan produk pangan yang berkualitas, aman, halal, dan konsisten sesuai dengan standar keamanan pangan yang berlaku.',
     },
     {
       icon: Search,
-      title: 'Uji Organoleptik & Inkubasi Sampel',
-      desc: 'Pemeriksaan laboratorium berkala mencakup pengujian inkubasi fisik, organoleptik (rasa, aroma, warna, tekstur), dan tingkat keawetan produk.',
+      title: 'Distribusi Luas & Efisien',
+      desc: 'Kemasan kedap udara (hermetically sealed) menjaga kualitas dan keamanan produk dalam proses distribusi ke berbagai wilayah secara efisien tanpa cold chain.',
     },
   ];
 
   return (
-    <section className="py-20 bg-white relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-charcoal-50 relative border-t border-forest-100 overflow-hidden">
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
@@ -45,14 +77,14 @@ export default function QualityLegality() {
             Jaminan Standar Mutu &amp; Perizinan
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight">
-            Legalitas &amp; Sistem Manajemen Mutu (QA/QC)
+            Izin, Legalitas &amp; Sertifikasi Mutu
           </h2>
           <p className="text-base text-charcoal-600 leading-relaxed">
-            PT Diza Pangan Bersama berkomitmen menerapkan prosedur keamanan pangan industri tingkat tinggi untuk memberikan ketenangan bagi brand mitra kami.
+            Keamanan dan kualitas adalah prioritas utama kami. Saat ini kami dalam proses finalisasi sertifikasi untuk memastikan seluruh fasilitas produksi memenuhi standar nasional dan internasional yang ketat.
           </p>
         </div>
 
-        {/* Legality Status Grid */}
+        {/* Certification Grid with Logo Images */}
         <div className="mb-16">
           <div className="flex items-center justify-between mb-6">
             <h3 className="text-xl font-bold text-charcoal-900 flex items-center">
@@ -60,7 +92,7 @@ export default function QualityLegality() {
               <span>Status Sertifikasi Standar Mutu Pangan</span>
             </h3>
             <span className="text-xs font-semibold text-forest-700 bg-forest-50 px-3 py-1 rounded-md border border-forest-200">
-              Target Tahap Sertifikasi Resmi
+              Dalam Proses Sertifikasi
             </span>
           </div>
 
@@ -68,28 +100,39 @@ export default function QualityLegality() {
             {certifications.map((cert, idx) => (
               <div
                 key={idx}
-                className="bg-forest-50/50 border border-forest-100 rounded-xl p-4 flex flex-col justify-between hover:border-forest-300 transition-colors"
+                className="bg-forest-50/50 border border-forest-100 rounded-xl p-5 flex flex-col items-center text-center hover:border-forest-300 transition-colors"
               >
-                <div>
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-extrabold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-200 uppercase">
-                      {cert.status}
-                    </span>
-                    <Clock className="w-3.5 h-3.5 text-amber-600" />
+                {cert.icon ? (
+                  <div className="relative w-16 h-16 mb-3">
+                    <Image
+                      src={cert.icon}
+                      alt={cert.title}
+                      fill
+                      className="object-contain"
+                    />
                   </div>
-                  <h4 className="font-bold text-forest-900 text-sm mb-1">{cert.title}</h4>
-                  <p className="text-[11px] text-charcoal-600 leading-normal">{cert.desc}</p>
+                ) : (
+                  <div className="w-16 h-16 mb-3 rounded-full bg-forest-100 flex items-center justify-center">
+                    <Award className="w-8 h-8 text-forest-600" />
+                  </div>
+                )}
+                <div className="mb-2">
+                  <span className="text-[10px] font-extrabold text-amber-700 bg-amber-100 px-2 py-0.5 rounded-full border border-amber-200 uppercase">
+                    {cert.status}
+                  </span>
                 </div>
+                <h4 className="font-bold text-forest-900 text-sm mb-1">{cert.title}</h4>
+                <p className="text-[11px] text-charcoal-600 leading-normal">{cert.desc}</p>
               </div>
             ))}
           </div>
         </div>
 
-        {/* QA/QC Operational Pillars */}
+        {/* QA/QC Pillars */}
         <div>
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold text-charcoal-900">4 Pilar Penjaminan Mutu &amp; Keamanan Operasional</h3>
-            <p className="text-xs text-charcoal-600 mt-1">Pengawasan dari penerimaan bahan baku hingga pengiriman akhir produk retort.</p>
+            <h3 className="text-2xl font-bold text-charcoal-900">4 Pilar Keamanan &amp; Kualitas Produksi</h3>
+            <p className="text-xs text-charcoal-600 mt-1">Sistem manajemen mutu sebagai bentuk tanggung jawab kami kepada mitra dan konsumen.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

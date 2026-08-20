@@ -35,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/images/logo.png" />
       </head>
-      <body className="antialiased text-charcoal-900 bg-charcoal-50 font-sans selection:bg-forest-700 selection:text-white">
+      <body className="antialiased text-charcoal-900 bg-charcoal-50 font-sans font-medium selection:bg-forest-700 selection:text-white">
         {children}
       </body>
     </html>

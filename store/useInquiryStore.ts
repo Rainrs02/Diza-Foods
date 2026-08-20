@@ -62,7 +62,7 @@ export const useInquiryStore = create<InquiryState>((set, get) => ({
   getWhatsAppUrl: () => {
     const { category, packaging, quantity, customFormula, clientName, companyName, phone, notes } = get();
     
-    const phoneNumber = '6281234567890'; // Target official WhatsApp number
+    const phoneNumber = '6289540523332'; // Nomor resmi PT Diza Pangan Bersama
     
     let message = `Halo Tim PT Diza Pangan Bersama (Diza Foods),\n\n`;
     message += `Saya bermaksud mengajukan Konsultasi Layanan Maklon Pangan Sterilisasi (Retort).\n\n`;

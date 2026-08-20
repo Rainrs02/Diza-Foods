@@ -1,38 +1,37 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Star, Quote, Building2, Utensils, Store, ChefHat, HeartHandshake, ShieldCheck } from 'lucide-react';
+import { Star, Quote, Building2 } from 'lucide-react';
 
-export default function TestimonialsPartners() {
+export default function TestimonialsPartners({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const partners = [
-    { name: 'Kedai Selera Nusantara', type: 'Jaringan Resto Kuliner' },
-    { name: 'Nasi Goreng Express', type: 'Franchise Kuliner' },
-    { name: 'Warung Sambal Mantap', type: 'Retail Packaged Food' },
-    { name: 'Dapur Gourmet HORECA', type: 'Central Kitchen & Hotel' },
-    { name: 'Rendang Legend ID', type: 'Ready-to-Eat Specialist' },
-    { name: 'Sambal Sachet Bistro', type: 'Modern Market Supplier' },
+    { name: 'Janji Jiwa', type: 'Kuliner Modern', logo: '/assets/canva/Client (1).png' },
+    { name: 'Juragan Aqiqah', type: 'Katering & HORECA', logo: '/assets/canva/Client (2).png' },
+    { name: 'Khasanah Sari Bakery', type: 'Industri Bakery', logo: '/assets/canva/Client (3).png' },
+    { name: 'PT. Kencana Anakmas Lestari', type: 'Korporasi Pangan', logo: '/assets/canva/Client (4).png' },
   ];
 
   const testimonials = [
     {
-      quote: 'Sangat terbantu bermaklon di Diza Foods, teknologi retort-nya membuat produk tahan lama tanpa mengubah rasa aslinya.',
-      name: 'Budi Santoso',
-      role: 'Founder & Owner',
-      company: 'Kedai Selera Nusantara',
+      quote: 'Kami bangga menjadi mitra Diza Foods. Teknologi retort-nya membuat produk kami tahan lama tanpa mengubah rasa aslinya — solusi ideal untuk skala distribusi nasional.',
+      name: 'Tim Juragan Aqiqah',
+      role: 'Mitra Maklon',
+      company: 'Juragan Aqiqah',
       rating: 5,
     },
     {
-      quote: 'Kapasitas produksi 6–10 ton per bulan sangat membantu stabilitas pasokan di 15 cabang resto kami. Tim R&D-nya sangat kooperatif meracik konsistensi rasa.',
-      name: 'Hendria Wijaya',
+      quote: 'Kapasitas produksi 20 ton per bulan sangat membantu stabilitas suplai kami. Tim R&D Diza sangat kooperatif dalam meracik konsistensi rasa untuk kebutuhan industri bakery kami.',
+      name: 'Tim Khasanah Sari',
       role: 'Head of Operations',
-      company: 'Dapur Gourmet HORECA',
+      company: 'Khasanah Sari Bakery',
       rating: 5,
     },
     {
-      quote: 'Pendampingan perizinan dan penerapan SOP APD steril di pabriknya membuat kami semakin percaya diri melakukan penetrasi produk saset sambal ke modern market nasional.',
-      name: 'Siti Rahmawati',
-      role: 'Chief Marketing Officer',
-      company: 'Sambal Sachet Bistro',
+      quote: 'Kepercayaan yang kami berikan kepada Diza Foods terbukti tepat. Standar kualitas, keamanan, dan konsistensi rasa terjaga di setiap batch produksi yang kami terima.',
+      name: 'Tim PT. Kencana Anakmas',
+      role: 'Procurement Manager',
+      company: 'PT. Kencana Anakmas Lestari',
       rating: 5,
     },
   ];
@@ -44,75 +43,55 @@ export default function TestimonialsPartners() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <span className="text-xs font-bold text-forest-700 uppercase tracking-widest bg-white px-3.5 py-1.5 rounded-full border border-forest-200 shadow-sm">
-            Mitra &amp; Kepercayaan B2B
+            Client &amp; Mitra Terpercaya
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight">
-            Kepercayaan Brand Kuliner &amp; Testimoni Client
+            Client Kami
           </h2>
           <p className="text-base text-charcoal-600 leading-relaxed">
-            Menjadi mitra manufaktur terpercaya bagi berbagai brand kuliner lokal, UMKM berkembang, dan jaringan restoran modern di Indonesia.
+            Kami bangga telah menjadi mitra strategis bagi berbagai pelaku bisnis, mulai dari UMKM inovatif hingga korporasi pangan berskala besar.
           </p>
         </div>
 
-        {/* Partner Logos/Badges Grid */}
+        {/* Partner Logos Grid — menggunakan logo dari Canva */}
         <div className="mb-16">
-          <div className="text-center text-xs font-bold text-charcoal-500 uppercase tracking-wider mb-6">
-            Dipercaya Oleh Mitra Brand Kuliner &amp; HORECA
+          <div className="text-center text-xs font-bold text-charcoal-500 uppercase tracking-wider mb-8">
+            Dipercaya Oleh Mitra Brand Kuliner &amp; Industri Pangan
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {partners.map((partner, idx) => (
-              <div
+              <motion.div
                 key={idx}
-                className="bg-white rounded-xl p-4 border border-charcoal-200 shadow-sm text-center flex flex-col items-center justify-center hover:border-forest-400 hover:shadow-md transition-all"
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-2xl p-6 border border-charcoal-200 shadow-sm flex flex-col items-center justify-center hover:border-forest-400 hover:shadow-md transition-all"
               >
-                <div className="w-8 h-8 rounded-lg bg-forest-50 text-forest-700 flex items-center justify-center mb-2 font-bold text-sm">
-                  {partner.name.charAt(0)}
+                <div className="relative w-20 h-20 mb-3">
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className="object-contain"
+                  />
                 </div>
-                <div className="font-bold text-xs text-charcoal-900 line-clamp-1">{partner.name}</div>
-                <div className="text-[10px] text-charcoal-500">{partner.type}</div>
-              </div>
+                <div className="font-bold text-sm text-charcoal-900 text-center leading-tight">{partner.name}</div>
+                <div className="text-[11px] text-charcoal-500 mt-1 text-center">{partner.type}</div>
+              </motion.div>
             ))}
           </div>
         </div>
 
-        {/* Testimonials Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((item, idx) => (
-            <motion.div
-              key={idx}
-              whileHover={{ y: -4 }}
-              className="bg-white rounded-2xl p-6 border border-charcoal-200 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-1">
-                    {[...Array(item.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-amber-400 fill-current" />
-                    ))}
-                  </div>
-                  <Quote className="w-6 h-6 text-forest-200" />
-                </div>
-
-                <p className="text-xs text-charcoal-700 leading-relaxed italic mb-6">
-                  &ldquo;{item.quote}&rdquo;
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-charcoal-100 flex items-center space-x-3">
-                <div className="w-10 h-10 rounded-full bg-forest-700 text-white font-bold flex items-center justify-center text-sm">
-                  {item.name.charAt(0)}
-                </div>
-                <div>
-                  <h4 className="font-bold text-charcoal-900 text-sm">{item.name}</h4>
-                  <p className="text-[11px] text-forest-700 font-medium">
-                    {item.role} — <span className="text-charcoal-500">{item.company}</span>
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+        {/* Layanan Kami Banner */}
+        <div className="mb-12 rounded-2xl p-6 sm:p-8" style={{background:'#2d5a27'}}>
+          <div className="text-center">
+            <h3 className="text-xl font-bold text-white mb-3">Layanan Kami</h3>
+            <p className="text-white/85 text-sm leading-relaxed max-w-3xl mx-auto">
+              Kepercayaan yang diberikan oleh mitra kami adalah bukti nyata atas dedikasi kami dalam menjaga standar kualitas, keamanan, dan konsistensi rasa di setiap produk yang kami hasilkan. Kami juga melayani konsultasi resep, sample produk, dan berbagai hal lain yang menunjang kebutuhan industri FnB.
+            </p>
+          </div>
         </div>
+
+
 
       </div>
     </section>

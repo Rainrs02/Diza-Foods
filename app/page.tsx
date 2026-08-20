@@ -1,13 +1,10 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import AboutFacility from '@/components/AboutFacility';
-import TeamProfile from '@/components/TeamProfile';
 import QualityLegality from '@/components/QualityLegality';
-import ProductCatalog from '@/components/ProductCatalog';
 import WorkflowSOP from '@/components/WorkflowSOP';
-import InquiryForm from '@/components/InquiryForm';
+import ProductPreview from '@/components/ProductPreview';
+import LatestArticles from '@/components/LatestArticles';
 import TestimonialsPartners from '@/components/TestimonialsPartners';
-import FAQSection from '@/components/FAQSection';
 import Footer from '@/components/Footer';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
@@ -16,14 +13,11 @@ export default function Home() {
     <main className="min-h-screen relative bg-charcoal-50 flex flex-col">
       <Navbar />
       <Hero />
-      <AboutFacility />
-      <TeamProfile />
-      <QualityLegality />
-      <ProductCatalog />
+      <ProductPreview />
+      <QualityLegality bgOverlay="bg2" />
       <WorkflowSOP />
-      <InquiryForm />
-      <TestimonialsPartners />
-      <FAQSection />
+      <TestimonialsPartners bgOverlay="bg1" />
+      <LatestArticles />
       <Footer />
       <FloatingWhatsApp />
     </main>

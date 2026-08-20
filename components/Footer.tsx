@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { MapPin, Phone, Clock, ExternalLink, ArrowUp } from 'lucide-react';
+import { MapPin, Phone, Clock, ExternalLink, ArrowUp, Globe } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -28,22 +28,24 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-extrabold text-white tracking-tight leading-none uppercase">PT DIZA PANGAN BERSAMA</h3>
+                <p className="text-xs text-forest-400 mt-0.5">Food Innovation for Better Life</p>
               </div>
             </div>
 
             <p className="text-xs text-forest-200 leading-relaxed max-w-md">
-              Pabrik maklon pangan sterilisasi (retort) terpercaya &amp; higienis. Spesialis pengolahan makanan siap saji (RTE), saus, bumbu cair, dan pasta berstandar industri tanpa pengawet.
+              Pabrik maklon pangan sterilisasi (retort) terpercaya & higienis. Spesialis pengolahan makanan siap saji (RTE), saus, bumbu pasta, dan filling bakery berstandar industri tanpa pengawet.
             </p>
 
             <div className="space-y-1.5 text-xs text-forest-300 pt-2">
-              <div><strong>Tahun Berdiri:</strong> 2026</div>
-              <div><strong>Kapasitas Suplai:</strong> 6 – 10 Ton / Bulan</div>
+              <div><strong>Tahun Berdiri:</strong> 8 Agustus 2026</div>
+              <div><strong>Kapasitas Suplai:</strong> 20 Ton / Bulan</div>
+              <div><strong>Website:</strong> www.dizafoods.com</div>
             </div>
           </div>
 
           {/* Col 2: Quick Links */}
           <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-sm font-bold uppercase tracking-wider" style={{color:'#8dc63f'}}>Halaman Utama SEO</h4>
+            <h4 className="text-sm font-bold uppercase tracking-wider" style={{color:'#8dc63f'}}>Halaman Utama</h4>
             <ul className="space-y-2 text-xs text-forest-200">
               <li><Link href="/" className="hover:text-white transition-colors">Beranda</Link></li>
               <li><Link href="/tentang-kami" className="hover:text-white transition-colors">Tentang Perusahaan</Link></li>
@@ -51,7 +53,7 @@ export default function Footer() {
               <li><Link href="/katalog-produk" className="hover:text-white transition-colors">Katalog Produk &amp; Kemasan</Link></li>
               <li><Link href="/tim-manajemen" className="hover:text-white transition-colors">Profil Tim Ekspert</Link></li>
               <li><Link href="/legalitas-sertifikasi" className="hover:text-white transition-colors">Legalitas &amp; Sistem Mutu</Link></li>
-              <li><Link href="/kalkulator-b2b" className="hover:text-white transition-colors">Kalkulator B2B</Link></li>
+              <li><Link href="/konsultasi" className="hover:text-white transition-colors">Kalkulator B2B</Link></li>
               <li><Link href="/faq" className="hover:text-white transition-colors">FAQ &amp; Izin Edar</Link></li>
               <li><Link href="/blog" className="hover:text-white transition-colors">Blog &amp; Artikel Edukasi</Link></li>
               <li><Link href="/kontak" className="hover:text-white transition-colors">Kontak Perusahaan</Link></li>
@@ -83,14 +85,23 @@ export default function Footer() {
               <div className="flex items-center space-x-2.5">
                 <Phone className="w-4 h-4 text-sage-400 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">WhatsApp B2B:</span> 0812-3456-7890
+                  <span className="font-semibold text-white">WhatsApp B2B:</span>{' '}
+                  <a href="https://wa.me/6289540523332" className="hover:text-white transition-colors">+62 8954 0523 3323</a>
+                </div>
+              </div>
+
+              <div className="flex items-center space-x-2.5">
+                <Globe className="w-4 h-4 text-sage-400 flex-shrink-0" />
+                <div>
+                  <span className="font-semibold text-white">Website:</span>{' '}
+                  <a href="https://www.dizafoods.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">www.dizafoods.com</a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-2.5">
                 <Clock className="w-4 h-4 text-sage-400 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-white">Jam Operasional Kantor &amp; Pabrik:</span> Senin - Sabtu (08.00 - 17.00 WIB)
+                  <span className="font-semibold text-white">Jam Operasional:</span> Senin - Sabtu (08.00 - 17.00 WIB)
                 </div>
               </div>
             </div>
@@ -101,7 +112,7 @@ export default function Footer() {
         {/* Bottom Copyright & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-forest-400">
           <div>
-            © 2026 <strong>PT Diza Pangan Bersama (Diza Foods)</strong>. All Rights Reserved. OEM &amp; ODM Retort Food Manufacturing.
+            © 2026 <strong>PT Diza Pangan Bersama (Diza Foods)</strong>. All Rights Reserved. Food Innovation for Better Life.
           </div>
 
           <button
@@ -117,3 +128,4 @@ export default function Footer() {
     </footer>
   );
 }
+

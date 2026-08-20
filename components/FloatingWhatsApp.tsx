@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export default function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(true);
 
-  const whatsappUrl = "https://wa.me/6281234567890?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20konsultasi%20layanan%20maklon%20sterilisasi%20(retort).";
+  const whatsappUrl = "https://wa.me/6289540523332?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20konsultasi%20layanan%20maklon%20sterilisasi%20(retort).";
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">

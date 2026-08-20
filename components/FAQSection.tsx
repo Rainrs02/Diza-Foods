@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
 
-export default function FAQSection() {
+export default function FAQSection({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqs = [
@@ -39,21 +39,14 @@ export default function FAQSection() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-white relative">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
-          <span className="text-xs font-bold text-forest-700 uppercase tracking-widest bg-forest-50 px-3.5 py-1.5 rounded-full border border-forest-200">
-            Pertanyaan Umum
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-charcoal-900 tracking-tight">
-            Frequently Asked Questions (FAQ)
-          </h2>
-          <p className="text-base text-charcoal-600 leading-relaxed">
-            Jawaban lengkap seputar teknologi sterilisasi retort, masa pengerjaan R&amp;D, hingga pendampingan izin edar.
-          </p>
-        </div>
+    <section id="faq" className="py-20 bg-white relative overflow-hidden">
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Accordion List */}
         <div className="space-y-4">
@@ -104,7 +97,7 @@ export default function FAQSection() {
           <p className="text-xs text-charcoal-600">Tim R&amp;D dan Konsultan Maklon kami siap berdiskusi secara langsung melalui WhatsApp.</p>
           <div>
             <a
-              href="https://wa.me/6281234567890"
+              href="https://wa.me/62895405233323"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-xl bg-forest-700 text-white font-bold text-xs hover:bg-forest-800 transition-colors shadow-md"

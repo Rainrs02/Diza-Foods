@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { Building2, Droplets, Gauge, ShieldAlert, CheckCircle } from 'lucide-react';
 
-export default function AboutFacility() {
+export default function AboutFacility({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const specs = [
     {
       icon: Building2,
@@ -29,6 +29,12 @@ export default function AboutFacility() {
 
   return (
     <section id="tentang" className="py-20 relative overflow-hidden" style={{background:'#f5f7f0'}}>
+      {bgOverlay === 'bg1' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
+      {bgOverlay === 'bg2' && (
+        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG2.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
+      )}
       {/* Compro organic blob decorations */}
       <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 pointer-events-none opacity-90" style={{background:'#2d5a27', borderRadius:'0 0 0 80%'}} />
       <div className="absolute bottom-0 left-0 w-36 h-36 pointer-events-none" style={{background:'#2d5a27', borderRadius:'0 60% 0 0'}} />
