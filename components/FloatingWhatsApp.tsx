@@ -10,14 +10,14 @@ export default function FloatingWhatsApp() {
   const whatsappUrl = "https://wa.me/6289540523332?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20konsultasi%20layanan%20maklon%20sterilisasi%20(retort).";
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-auto">
+    <div className="fixed bottom-[80px] lg:bottom-6 right-4 lg:right-6 z-50 flex flex-col items-end pointer-events-auto">
       <AnimatePresence>
         {showTooltip && (
           <motion.div
             initial={{ opacity: 0, y: 10, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, scale: 0.9 }}
-            className="mb-3 max-w-xs bg-charcoal-900 text-white text-xs p-3.5 rounded-xl shadow-2xl border border-charcoal-700 relative"
+            className="hidden lg:block mb-3 max-w-xs bg-charcoal-900 text-white text-xs p-3.5 rounded-xl shadow-2xl border border-charcoal-700 relative"
           >
             <button
               onClick={() => setShowTooltip(false)}
@@ -42,9 +42,9 @@ export default function FloatingWhatsApp() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Konsultasi via WhatsApp"
-        className="group relative flex items-center justify-center w-14 h-14 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-pulse-wa"
+        className="group relative flex items-center justify-center w-10 h-10 lg:w-14 lg:h-14 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-pulse-wa"
       >
-        <MessageCircle className="w-7 h-7 fill-current" />
+        <MessageCircle className="w-5 h-5 lg:w-7 lg:h-7 fill-current" />
         <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 hidden group-hover:block bg-charcoal-900 text-white text-xs font-semibold px-3 py-1.5 rounded-lg whitespace-nowrap shadow-lg">
           Hubungi Tim Maklon B2B
         </span>
