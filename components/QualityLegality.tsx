@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { Award, ShieldCheck, CheckCircle2, Clock, Search, Shield, Cpu, RefreshCw } from 'lucide-react';
+import GSAPReveal from './GSAPReveal';
 
 export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const certifications = [
