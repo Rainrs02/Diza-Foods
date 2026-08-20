@@ -68,14 +68,14 @@ export default function ProductPreview() {
         </div>
 
         {/* Category Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5">
           {categories.map((cat) => {
             const Icon = cat.icon;
             return (
               <Link
                 key={cat.title}
                 href={cat.href}
-                className="group flex flex-col justify-between p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                className="group flex flex-col justify-between p-4 sm:p-5 rounded-2xl border transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
                 style={{
                   background: cat.bg,
                   borderColor: cat.border,
@@ -85,13 +85,13 @@ export default function ProductPreview() {
                   {/* Icon + Badge */}
                   <div className="flex items-start justify-between mb-4">
                     <div
-                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center"
                       style={{ background: 'white', border: `1.5px solid ${cat.border}` }}
                     >
-                      <Icon className="w-5 h-5" style={{ color: cat.color }} />
+                      <Icon className="w-4 h-4 sm:w-5 sm:h-5" style={{ color: cat.color }} />
                     </div>
                     <span
-                      className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-md"
+                      className="text-[8px] sm:text-[10px] font-extrabold uppercase tracking-wider px-1.5 sm:px-2 py-0.5 rounded-md"
                       style={{ background: 'white', color: cat.color, border: `1px solid ${cat.border}` }}
                     >
                       {cat.badge}
@@ -99,12 +99,12 @@ export default function ProductPreview() {
                   </div>
 
                   {/* Title */}
-                  <h3 className="font-bold text-base mb-2 leading-snug" style={{ color: '#1a1a1a' }}>
+                  <h3 className="font-bold text-sm sm:text-base mb-1 sm:mb-2 leading-snug" style={{ color: '#1a1a1a' }}>
                     {cat.title}
                   </h3>
 
                   {/* Desc */}
-                  <p className="text-xs leading-relaxed" style={{ color: '#4b5563' }}>
+                  <p className="text-[10px] sm:text-xs leading-relaxed" style={{ color: '#4b5563' }}>
                     {cat.desc}
                   </p>
                 </div>
