@@ -13,15 +13,15 @@ export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2'
         <div className="grid grid-cols-12 gap-4 lg:gap-12 items-center">
           
           {/* Left Column: Copywriting & Actions */}
-          <div className="col-span-7 lg:col-span-7 space-y-4 sm:space-y-6 text-left">
+          <div className="col-span-12 lg:col-span-7 space-y-3 sm:space-y-6 text-left">
             {/* Top Industrial Badge */}
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-forest-50 border border-forest-200 text-forest-700 text-xs font-bold tracking-wide uppercase shadow-sm">
-              <ShieldCheck className="w-4 h-4 text-forest-600" />
+            <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-forest-50 border border-forest-200 text-forest-700 text-[10px] sm:text-xs font-bold tracking-wide uppercase shadow-sm">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-forest-600" />
               <span>OEM / ODM Food Retort Manufacturer</span>
             </div>
 
             {/* Main Headline */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-charcoal-900 leading-tight tracking-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-5xl font-black text-charcoal-900 leading-tight tracking-tight">
               Food Innovation for{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-forest-700 to-forest-500">
                 Better Life
@@ -29,20 +29,20 @@ export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2'
             </h1>
 
             {/* Subheadline */}
-            <p className="text-base sm:text-lg text-charcoal-600 leading-relaxed font-normal max-w-2xl">
+            <p className="text-xs sm:text-base lg:text-lg text-charcoal-600 leading-relaxed font-normal max-w-2xl">
               Mitra strategis <strong className="text-forest-800 font-semibold">PT Diza Pangan Bersama</strong> untuk produksi massal makanan siap saji, saus, bumbu pasta, dan filling bakery berstandar industri dengan kapasitas <span className="text-forest-700 font-bold">20 ton/bulan</span>.
             </p>
 
             {/* Bullet Highlights */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 pt-1 sm:pt-2">
               {[
                 'Teknologi Retort Sterilizer Modern',
                 'Tanpa Pengawet Kimia & Bebas Refrigerasi',
                 'R&D Kustom Formula & NDA Terjamin',
                 'MOQ Pemesanan Rendah, Fleksibel',
               ].map((item, i) => (
-                <div key={i} className="flex items-start space-x-2.5 text-sm text-charcoal-700">
-                  <CheckCircle2 className="w-4 h-4 text-forest-600 mt-0.5 flex-shrink-0" />
+                <div key={i} className="flex items-start space-x-2 text-xs sm:text-sm text-charcoal-700">
+                  <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-forest-600 mt-0.5 flex-shrink-0" />
                   <span>{item}</span>
                 </div>
               ))}
@@ -84,7 +84,7 @@ export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2'
           </div>
 
           {/* Right Column: Hero Visual Pure Logo */}
-          <div className="col-span-5 lg:col-span-5 relative flex justify-center items-center h-full">
+          <div className="hidden lg:flex lg:col-span-5 relative justify-center items-center h-full">
             {/* Pure Logo */}
             <div className="relative w-80 h-80 sm:w-[400px] sm:h-[400px] z-10 drop-shadow-xl hover:scale-105 transition-transform duration-500">
               <Image
