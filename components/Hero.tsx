@@ -5,7 +5,7 @@ import { ShieldCheck, Factory, Beaker, ArrowRight, CheckCircle2, Flame, Award } 
 
 export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   return (
-    <section className="relative overflow-hidden bg-forest-900 pt-32 pb-20 lg:pt-48 lg:pb-32">
+    <section className="relative overflow-hidden bg-charcoal-50 pt-12 pb-20 lg:pt-20 lg:pb-28">
       {bgOverlay === 'bg1' && (
         <div className="absolute inset-0 opacity-15 pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       )}

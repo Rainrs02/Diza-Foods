@@ -148,6 +148,14 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
                   <h3 className="text-xl font-bold text-white mb-2">{cat.title}</h3>
                   <p className="text-xs text-forest-200 leading-relaxed mb-4">{cat.desc}</p>
 
+                  <div className="relative w-full h-40 mb-4 rounded-xl overflow-hidden border border-forest-700 bg-forest-900/50 flex items-center justify-center p-2">
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+
                   <div className="bg-forest-900/60 p-3 rounded-xl border border-forest-700 mb-4">
                     <span className="text-[11px] font-semibold text-sage-300 block mb-1">Target Segmen Pasar:</span>
                     <span className="text-xs text-white font-medium">{cat.target}</span>
