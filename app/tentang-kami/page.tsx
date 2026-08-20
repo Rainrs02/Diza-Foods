@@ -16,27 +16,11 @@ export default function TentangKamiPage() {
   return (
     <main className="min-h-screen bg-charcoal-50 flex flex-col">
       <Navbar />
-      {/* Header Banner */}
-      <section className="py-16 pt-24 bg-forest-900 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.07] pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3 relative z-10">
-          <span className="text-xs font-bold text-sage-300 uppercase tracking-widest bg-forest-800 px-3.5 py-1.5 rounded-full border border-forest-700">
-            Profil Perusahaan
-          </span>
-          <h1 className="text-3xl sm:text-5xl font-black text-white tracking-tight">Profil Lengkap Diza Foods</h1>
-        </div>
-      </section>
+      <AboutFacility bgOverlay="bg1" />
 
-      {/* Tentang Kami & Makna Nama DIZA FOODS */}
+      {/* Makna Nama DIZA FOODS */}
       <section className="py-16 bg-white relative">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          
-          <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-3xl font-extrabold text-charcoal-900 mb-6">Tentang Kami</h2>
-            <p className="text-base text-charcoal-700 leading-relaxed font-medium">
-              Berdiri sejak 8 Agustus 2026 di Jatiasih, Bekasi, PT Diza Pangan Bersama (Diza Foods) hadir untuk menjawab kebutuhan industri kuliner akan layanan maklon makanan siap saji dengan teknologi sterilisasi modern (retort). Berkomitmen untuk menjadi mitra strategis bagi para pelaku usaha makanan dalam memperluas jangkauan produk mereka secara higienis dan tahan lama tanpa bahan pengawet.
-            </p>
-          </div>
 
           <div className="space-y-8 pt-6 border-t border-charcoal-100">
             <h3 className="text-2xl font-extrabold text-charcoal-900 text-center">Filosofi Nama <span className="text-forest-700">DIZA FOODS</span></h3>
@@ -139,8 +123,6 @@ export default function TentangKamiPage() {
         </div>
       </section>
 
-      {/* Infrastruktur Pabrik (AboutFacility) */}
-      <AboutFacility bgOverlay="bg1" />
 
       <Footer />
       <FloatingWhatsApp />

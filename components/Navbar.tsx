@@ -32,30 +32,7 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top Banner Announcement */}
-      <div className="bg-forest-900 text-forest-100 text-xs py-2 px-4 border-b border-forest-800">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center space-x-2">
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-sage-500 text-forest-950 uppercase tracking-wider">
-              B2B Retort Factory
-            </span>
-            <span className="hidden sm:inline text-forest-200">
-              Pabrik Maklon Pangan Sterilisasi Kedap Udara — Kapasitas 20 Ton/Bulan
-            </span>
-          </div>
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://wa.me/62895405233323"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center space-x-1 hover:text-sage-300 transition-colors font-medium"
-            >
-              <PhoneCall className="w-3.5 h-3.5 text-sage-400" />
-              <span>Hotline B2B: 0895-4052-33323</span>
-            </a>
-          </div>
-        </div>
-      </div>
+
 
       {/* Main Navbar */}
       <header

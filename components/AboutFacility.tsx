@@ -53,8 +53,8 @@ export default function AboutFacility({ bgOverlay = 'none' }: { bgOverlay?: 'bg1
           <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight" style={{color:'#2d5a27'}}>
             Tentang PT Diza Pangan Bersama
           </h2>
-          <p className="text-base text-charcoal-600 leading-relaxed">
-            Berdiri sejak <strong style={{color:'#2d5a27'}}>08 Agustus 2026</strong> di Jatiasih, Bekasi, kami hadir sebagai mitra manufaktur makanan siap saji yang higienis, legal, dan aman untuk skala B2B.
+          <p className="text-base text-charcoal-700 leading-relaxed font-medium">
+            Berdiri sejak <strong style={{color:'#2d5a27'}}>8 Agustus 2026</strong> di Jatiasih, Bekasi, PT Diza Pangan Bersama (Diza Foods) hadir untuk menjawab kebutuhan industri kuliner akan layanan maklon makanan siap saji dengan teknologi sterilisasi modern (retort). Berkomitmen untuk menjadi mitra strategis bagi para pelaku usaha makanan dalam memperluas jangkauan produk mereka secara higienis dan tahan lama tanpa bahan pengawet.
           </p>
         </div>
 
