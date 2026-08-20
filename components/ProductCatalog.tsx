@@ -130,32 +130,31 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6"
+            className="grid grid-cols-2 gap-4 sm:gap-6"
           >
             {categories.map((cat) => (
               <div
                 key={cat.id}
-                className="bg-forest-800/70 border border-forest-700 rounded-2xl p-6 sm:p-8 hover:border-sage-500/50 transition-all duration-300 flex flex-col justify-between"
+                className="bg-forest-800/70 border border-forest-700 rounded-2xl p-4 sm:p-8 hover:border-sage-500/50 transition-all duration-300 flex flex-col justify-between relative"
               >
+                {/* Absolute Top-Right Image */}
+                <div className="absolute top-4 right-4 w-16 h-16 sm:w-24 sm:h-24 pointer-events-none flex items-center justify-center">
+                  <img
+                    src={cat.image}
+                    alt={cat.title}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] font-extrabold text-forest-950 bg-sage-400 px-2.5 py-1 rounded-md uppercase tracking-wider">
+                    <span className="text-[9px] sm:text-[10px] font-extrabold text-forest-950 bg-sage-400 px-2.5 py-1 rounded-md uppercase tracking-wider relative z-10">
                       {cat.badge}
                     </span>
-                    <Sparkles className="w-4 h-4 text-sage-300" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-2">{cat.title}</h3>
-                  <div className="flex flex-col sm:flex-row gap-4 mb-4">
-                    <p className="text-xs text-forest-200 leading-relaxed flex-1">{cat.desc}</p>
-                    <div className="relative w-full sm:w-32 h-32 flex-shrink-0 rounded-xl overflow-hidden border border-forest-700 bg-forest-900/50 flex items-center justify-center p-2">
-                      <img
-                        src={cat.image}
-                        alt={cat.title}
-                        className="w-full h-full object-contain"
-                      />
-                    </div>
-                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 relative z-10 pr-16 sm:pr-24">{cat.title}</h3>
+                  <p className="text-[10px] sm:text-xs text-forest-200 leading-relaxed mb-4 relative z-10">{cat.desc}</p>
 
                   <div className="bg-forest-900/60 p-3 rounded-xl border border-forest-700 mb-4">
                     <span className="text-[11px] font-semibold text-sage-300 block mb-1">Target Segmen Pasar:</span>

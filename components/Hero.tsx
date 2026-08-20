@@ -10,10 +10,10 @@ export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2'
         <div className="absolute inset-0 opacity-15 pointer-events-none z-0" style={{ backgroundImage: "url('/assets/BG1.png')", backgroundSize: 'cover', backgroundPosition: 'center' }}></div>
       )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-12 gap-4 lg:gap-12 items-center">
           
           {/* Left Column: Copywriting & Actions */}
-          <div className="lg:col-span-7 space-y-6 text-left">
+          <div className="col-span-7 lg:col-span-7 space-y-4 sm:space-y-6 text-left">
             {/* Top Industrial Badge */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-forest-50 border border-forest-200 text-forest-700 text-xs font-bold tracking-wide uppercase shadow-sm">
               <ShieldCheck className="w-4 h-4 text-forest-600" />
@@ -84,7 +84,7 @@ export default function Hero({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2'
           </div>
 
           {/* Right Column: Hero Visual Pure Logo */}
-          <div className="lg:col-span-5 relative flex justify-center items-center h-full">
+          <div className="col-span-5 lg:col-span-5 relative flex justify-center items-center h-full">
             {/* Pure Logo */}
             <div className="relative w-80 h-80 sm:w-[400px] sm:h-[400px] z-10 drop-shadow-xl hover:scale-105 transition-transform duration-500">
               <Image
