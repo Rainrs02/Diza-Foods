@@ -28,17 +28,15 @@ export default function InquiryForm({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' 
   } = useInquiryStore();
 
   const categories = [
-    'Saus & Pasta Skala Industri',
-    'Bumbu Masak Cair & Kaldu',
-    'Makanan Siap Saji (Ready-to-Eat)',
-    'Bakery Fillings & Toppings',
+    'Filling Bakery & Toppings',
+    'Sauce & Sambal',
+    'Bumbu Pasta',
+    'RTE Foods (Ready To Eat)',
   ];
 
   const packagings = [
     'Aluminium Foil Retort Pouch',
     'Clear / Transparent Retort Pouch',
-    'Jar Kaca (Glass Jar)',
-    'Kaleng Industri (Tin Can)',
   ];
 
   const presetQuantities = [1000, 3000, 5000, 10000, 25000];

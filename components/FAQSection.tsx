@@ -29,8 +29,8 @@ export default function FAQSection({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' |
       a: 'Sebelum pertukaran formula dan pengerjaan R&D dimulai, kami wajib menandatangani surat Non-Disclosure Agreement (NDA) yang mengikat secara hukum untuk memastikan resep sepenuhnya menjadi hak milik eksklusif brand Anda.',
     },
     {
-      q: 'Jenis kemasan apa saja yang kompatibel dengan proses sterilisasi retort di pabrik Diza Foods?',
-      a: 'Fasilitas kami mendukung kemasan Aluminium Foil Retort Pouch, Clear/Transparent Retort Pouch, Jar Kaca (Glass Jar), dan Kaleng Industri (Tin Can) dari ukuran saset retail 100g hingga bulk packaging 1kg–5kg.',
+      q: 'Apa saja opsi kemasan maklon yang tersedia?',
+      a: 'Fasilitas kami mendukung kemasan Aluminium Foil Retort Pouch dan Clear/Transparent Retort Pouch dari ukuran saset retail 100g hingga bulk packaging 1kg–5kg.',
     },
   ];
 

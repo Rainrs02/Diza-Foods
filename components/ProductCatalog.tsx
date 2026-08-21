@@ -61,20 +61,6 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
       ideal: 'Sambal Basah, Isian Buah, Bumbu Cair Display',
       icon: Package,
     },
-    {
-      title: 'Jar Kaca (Glass Jar)',
-      type: 'Rigid Packaging',
-      desc: 'Menampilkan kesan produk premium, elegan, dan sangat higienis. Memberikan nilai tambah visual yang tinggi untuk pasar modern.',
-      ideal: 'Saus Artisan, Sambal Botolan, Selai Buah Gourmet',
-      icon: Layers,
-    },
-    {
-      title: 'Kaleng Industri (Tin Can)',
-      type: 'Heavy-Duty Packaging',
-      desc: 'Kemasan klasik super kokoh yang tahan terhadap guncangan berat logistik ekspor, distribusi nasional jauh, dan pasokan HORECA besar.',
-      ideal: 'Kaldu Bulk HORECA, Pasokan Logistik Ekspor',
-      icon: Scale,
-    },
   ];
 
   return (
@@ -130,7 +116,7 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            className="grid grid-cols-2 gap-4 sm:gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6"
           >
             {categories.map((cat) => (
               <div
@@ -154,7 +140,7 @@ export default function ProductCatalog({ bgOverlay = 'none' }: { bgOverlay?: 'bg
                   </div>
 
                   <h3 className="text-lg sm:text-xl font-bold text-white mb-2 relative z-10 pr-16 sm:pr-24">{cat.title}</h3>
-                  <p className="text-[10px] sm:text-xs text-forest-200 leading-relaxed mb-4 relative z-10">{cat.desc}</p>
+                  <p className="text-[10px] sm:text-xs text-forest-200 leading-relaxed mb-4 relative z-10 pr-16 sm:pr-24">{cat.desc}</p>
 
                   <div className="bg-forest-900/60 p-3 rounded-xl border border-forest-700 mb-4">
                     <span className="text-[11px] font-semibold text-sage-300 block mb-1">Target Segmen Pasar:</span>

@@ -12,11 +12,11 @@ export default function Home() {
   return (
     <main className="min-h-screen relative bg-charcoal-50 flex flex-col">
       <Navbar />
-      <Hero />
+      <Hero bgOverlay="bg1" />
       <ProductPreview />
       <QualityLegality bgOverlay="bg2" />
-      <WorkflowSOP />
-      <TestimonialsPartners bgOverlay="bg1" />
+      <TestimonialsPartners />
+      <WorkflowSOP bgOverlay="bg1" />
       <LatestArticles />
       <Footer />
       <FloatingWhatsApp />

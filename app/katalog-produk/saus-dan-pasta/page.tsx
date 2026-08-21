@@ -56,9 +56,6 @@ export default function SausDanPastaPage() {
                   <strong>Pouch Saset (100g - 250g):</strong> Sangat cocok untuk pasar retail dan saset resto takeout.
                 </div>
                 <div className="bg-white p-3 rounded-lg border border-forest-100">
-                  <strong>Jar Kaca (Glass Jar 200g - 350g):</strong> Memberikan kesan artisan premium untuk meja makan resto atau oleh-oleh.
-                </div>
-                <div className="bg-white p-3 rounded-lg border border-forest-100">
                   <strong>Bulk Bag (1kg - 5kg):</strong> Pilihan paling efisien untuk stok dapur central kitchen franchise.
                 </div>
               </div>

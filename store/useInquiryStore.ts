@@ -27,7 +27,7 @@ export interface InquiryState {
 }
 
 const DEFAULT_STATE = {
-  category: 'Saus & Pasta Skala Industri',
+  category: 'Filling Bakery & Toppings',
   packaging: 'Aluminium Foil Retort Pouch',
   quantity: 1000,
   customFormula: true,

@@ -44,7 +44,7 @@ export default function BakeryFillingsPage() {
                 <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2" /><span>Selai Buah Nanas, Stroberi &amp; Blueberry Fresh</span></li>
                 <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2" /><span>Cokelat Pasta &amp; Choco Crunch Bakery Fillings</span></li>
                 <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2" /><span>Krim Keju &amp; Custard Filling Bake-Stable</span></li>
-                <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2" /><span>Kemasan Pouch Saset, Jar Kaca &amp; Pail Industri</span></li>
+                <li className="flex items-center"><CheckCircle2 className="w-4 h-4 text-emerald-600 mr-2" /><span>Kemasan Pouch Saset &amp; Pail Industri</span></li>
               </ul>
             </div>
 

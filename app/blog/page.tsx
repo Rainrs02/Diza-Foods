@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { blogPosts } from '@/data/blogs';
+import { getBlogPosts } from '@/lib/blogs';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 
 export const metadata = {
@@ -9,6 +9,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
+  const blogPosts = getBlogPosts();
   return (
     <div className="pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

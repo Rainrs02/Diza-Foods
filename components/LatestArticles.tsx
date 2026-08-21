@@ -1,44 +1,27 @@
-'use client';
 
 import Link from 'next/link';
 import { ArrowRight, Calendar, User } from 'lucide-react';
 import Image from 'next/image';
 
-const articles = [
-  {
-    title: 'Keunggulan Teknologi Sterilisasi Retort untuk Industri Makanan B2B',
-    desc: 'Pelajari bagaimana sterilisasi retort dapat memperpanjang masa simpan produk makanan tanpa pengawet kimia.',
-    date: '20 Agustus 2026',
-    author: 'Tim R&D',
-    image: '/images/blog/retort_technology.png',
-    href: '/blog/mengenal-teknologi-retort'
-  },
-  {
-    title: 'Panduan Memilih Kemasan Retort Pouch yang Tepat',
-    desc: 'Pemilihan material kemasan sangat penting untuk menjaga kualitas makanan selama proses sterilisasi.',
-    date: '15 Agustus 2026',
-    author: 'Tim Produksi',
-    image: '/images/blog/retort_packaging_types.png',
-    href: '/blog/perbedaan-kemasan-retort-pouch-jar-kaca-kaleng'
-  },
-  {
-    title: 'Standar Keamanan Pangan: Mengapa Sertifikasi Penting?',
-    desc: 'Mengenal standar CCPOB, HACCP, dan Halal dalam menjamin mutu dan keamanan produk maklon.',
-    date: '10 Agustus 2026',
-    author: 'Tim QA',
-    image: '/images/blog/ready_to_eat_food.png',
-    href: '/blog/langkah-mengurus-izin-bpom-halal-produk-maklon'
-  }
-];
+import { getBlogPosts } from '@/lib/blogs';
 
 export default function LatestArticles() {
+  const articles = getBlogPosts().slice(0, 3).map(post => ({
+    title: post.title,
+    desc: post.excerpt,
+    date: new Date(post.date).toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' }),
+    author: post.author,
+    image: post.image,
+    href: `/blog/${post.slug}`
+  }));
+
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col sm:flex-row justify-between items-end mb-10 gap-4">
-          <div className="max-w-2xl space-y-3">
+        <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end mb-10 gap-4 text-center sm:text-left">
+          <div className="max-w-2xl space-y-3 flex flex-col items-center sm:items-start">
             <span className="text-xs font-bold text-forest-700 uppercase tracking-widest bg-forest-50 px-3.5 py-1.5 rounded-full border border-forest-200">
               Blog & Edukasi
             </span>

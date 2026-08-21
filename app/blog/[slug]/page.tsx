@@ -1,4 +1,4 @@
-import { blogPosts } from '@/data/blogs';
+import { getBlogPosts, getBlogPostBySlug } from '@/lib/blogs';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -6,13 +6,13 @@ import { Calendar, User, ArrowLeft, ChevronRight } from 'lucide-react';
 import { Metadata } from 'next';
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({
+  return getBlogPosts().map((post) => ({
     slug: post.slug,
   }));
 }
 
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = getBlogPostBySlug(params.slug);
   if (!post) {
     return { title: 'Not Found' };
   }
@@ -24,14 +24,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 }
 
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
-  const post = blogPosts.find((p) => p.slug === params.slug);
+  const post = getBlogPostBySlug(params.slug);
 
   if (!post) {
     notFound();
   }
 
   // Related posts (simple: next 2 posts)
-  const relatedPosts = blogPosts.filter(p => p.id !== post.id).slice(0, 2);
+  const relatedPosts = getBlogPosts().filter(p => p.id !== post.id).slice(0, 2);
 
   return (
     <div className="pt-24 pb-20 bg-white">
