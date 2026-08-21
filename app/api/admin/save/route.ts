@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   try {
     const { post, action } = await request.json();
     
-    if (!post || !post.id || !post.title) {
+    if (!post || !post.id || (action !== 'delete' && !post.title)) {
       return NextResponse.json({ success: false, message: 'Data tidak lengkap' }, { status: 400 });
     }
 
@@ -29,6 +29,8 @@ export async function POST(request: Request) {
     // 2. Update array
     if (action === 'create') {
       blogs.push(post);
+    } else if (action === 'delete') {
+      blogs = blogs.filter((p: any) => p.id !== post.id);
     } else {
       const index = blogs.findIndex((p: any) => p.id === post.id);
       if (index > -1) {
@@ -82,7 +84,7 @@ export async function POST(request: Request) {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          message: `Update blog post: ${post.title}`,
+          message: action === 'delete' ? `Delete blog post ID: ${post.id}` : `Update blog post: ${post.title}`,
           content: contentBase64,
           sha: sha || undefined
         })

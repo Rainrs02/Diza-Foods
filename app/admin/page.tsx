@@ -1,6 +1,7 @@
 import { getBlogPosts } from '@/lib/blogs';
 import Link from 'next/link';
-import { Plus, Edit, Trash2, LogOut } from 'lucide-react';
+import { Plus, Edit, LogOut } from 'lucide-react';
+import DeleteButton from '@/components/DeleteButton';
 
 export default function AdminDashboard() {
   const posts = getBlogPosts();
@@ -51,9 +52,7 @@ export default function AdminDashboard() {
                   >
                     <Edit className="w-4 h-4 mr-1.5" /> Edit
                   </Link>
-                  <button className="inline-flex items-center text-sm font-semibold text-red-500 hover:text-red-700 transition-colors">
-                    <Trash2 className="w-4 h-4 mr-1.5" /> Hapus
-                  </button>
+                  <DeleteButton id={post.id} />
                 </div>
               </div>
             </article>
