@@ -45,10 +45,12 @@ export async function POST(request: Request) {
     const githubOwner = process.env.GITHUB_OWNER; // ex: "username"
     const githubRepo = process.env.GITHUB_REPO; // ex: "diza-foods"
 
-    if (process.env.NODE_ENV === 'development' || (!githubToken || !githubOwner || !githubRepo)) {
-      // Simpan lokal jika di environment dev atau token tidak ada
+    if (process.env.NODE_ENV === 'development' && (!githubToken || !githubOwner || !githubRepo)) {
+      // Simpan lokal jika di environment dev ATAU jika mau test lokal
       saveLocally(blogs);
       return NextResponse.json({ success: true, message: 'Disimpan secara lokal' });
+    } else if (!githubToken || !githubOwner || !githubRepo) {
+      return NextResponse.json({ success: false, message: 'Environment Variables GitHub (Token, Owner, Repo) belum di-set di Vercel!' }, { status: 400 });
     } else {
       // Simpan ke GitHub via API
       const gitPath = 'data/blogs.json';

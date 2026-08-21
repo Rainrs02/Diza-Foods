@@ -16,6 +16,7 @@ export default function EditorPage() {
   const isNew = id === 'new';
 
   const [loading, setLoading] = useState(false);
+  const [uploadingImage, setUploadingImage] = useState(false);
   const [fetching, setFetching] = useState(!isNew);
   const [error, setError] = useState('');
   
@@ -62,6 +63,41 @@ export default function EditorPage() {
     if (formData.title) {
       const slug = formData.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
       setFormData({ ...formData, slug });
+    }
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    setUploadingImage(true);
+    setError('');
+
+    try {
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = async () => {
+        const base64 = reader.result as string;
+        // Generate a clean filename
+        const filename = `${Date.now()}-${file.name.replace(/[^a-zA-Z0-9.-]/g, '_')}`;
+        
+        const res = await fetch('/api/admin/upload', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name: filename, base64 })
+        });
+        
+        const data = await res.json();
+        if (data.success) {
+          setFormData(prev => ({ ...prev, image: data.url }));
+        } else {
+          setError(data.message || 'Gagal mengupload gambar');
+        }
+        setUploadingImage(false);
+      };
+    } catch (err) {
+      setError('Terjadi kesalahan saat upload');
+      setUploadingImage(false);
     }
   };
 
@@ -154,11 +190,17 @@ export default function EditorPage() {
 
             <div className="sm:col-span-2">
               <label className="block text-sm font-bold text-charcoal-700 mb-1">URL Gambar Cover</label>
-              <input
-                type="text" name="image" required value={formData.image} onChange={handleChange}
-                placeholder="/images/blog/nama-gambar.png"
-                className="w-full px-4 py-2 border border-charcoal-300 rounded-lg focus:ring-forest-500 focus:border-forest-500"
-              />
+              <div className="flex gap-2">
+                <input
+                  type="text" name="image" required value={formData.image} onChange={handleChange}
+                  placeholder="/images/blog/nama-gambar.png"
+                  className="flex-grow px-4 py-2 border border-charcoal-300 rounded-lg focus:ring-forest-500 focus:border-forest-500"
+                />
+                <label className="cursor-pointer inline-flex items-center px-4 py-2 bg-charcoal-100 border border-charcoal-300 rounded-lg text-sm font-semibold text-charcoal-700 hover:bg-charcoal-200 transition-colors">
+                  {uploadingImage ? 'Uploading...' : 'Upload File'}
+                  <input type="file" accept="image/*" onChange={handleImageUpload} className="hidden" disabled={uploadingImage} />
+                </label>
+              </div>
             </div>
 
             <div className="sm:col-span-2">
