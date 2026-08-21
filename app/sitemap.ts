@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next';
-import { blogPosts } from '@/data/blogs';
+import { getBlogPosts } from '@/lib/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://dizafoods.co.id';
+  const blogPosts = getBlogPosts();
 
   const blogs: MetadataRoute.Sitemap = blogPosts.map((post) => ({
     url: `${baseUrl}/blog/${post.slug}`,
