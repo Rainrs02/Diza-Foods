@@ -2,6 +2,7 @@ import { getBlogPosts } from '@/lib/blogs';
 import Link from 'next/link';
 import { Plus, Edit, LogOut } from 'lucide-react';
 import DeleteButton from '@/components/DeleteButton';
+import LogoutButton from '@/components/LogoutButton';
 
 export default function AdminDashboard() {
   const posts = getBlogPosts();
@@ -23,6 +24,7 @@ export default function AdminDashboard() {
               <Plus className="w-4 h-4 mr-2" />
               Tulis Artikel
             </Link>
+            <LogoutButton />
           </div>
         </div>
 

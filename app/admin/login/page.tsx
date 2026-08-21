@@ -4,6 +4,8 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { ShieldCheck } from 'lucide-react';
 
+import Image from 'next/image';
+
 export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -40,8 +42,16 @@ export default function LoginPage() {
   return (
     <div className="min-h-screen bg-charcoal-50 flex flex-col justify-center items-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
-        <div className="flex justify-center text-forest-700 mb-4">
-          <ShieldCheck className="w-16 h-16" />
+        <div className="flex justify-center mb-4">
+          <div className="relative w-32 h-32 sm:w-40 sm:h-40">
+            <Image
+              src="/images/logo.png"
+              alt="Diza Foods Logo"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
         <h2 className="text-center text-3xl font-extrabold text-charcoal-900">
           Diza Foods Admin
