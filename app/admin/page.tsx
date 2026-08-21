@@ -25,56 +25,45 @@ export default function AdminDashboard() {
           </div>
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-charcoal-200 overflow-hidden">
-          <div className="overflow-x-auto">
-            <table className="min-w-full divide-y divide-charcoal-200">
-              <thead className="bg-charcoal-50">
-                <tr>
-                  <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-charcoal-500 uppercase tracking-wider">Judul</th>
-                  <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-charcoal-500 uppercase tracking-wider">Tanggal</th>
-                  <th scope="col" className="px-6 py-4 text-left text-xs font-bold text-charcoal-500 uppercase tracking-wider">Penulis</th>
-                  <th scope="col" className="px-6 py-4 text-right text-xs font-bold text-charcoal-500 uppercase tracking-wider">Aksi</th>
-                </tr>
-              </thead>
-              <tbody className="bg-white divide-y divide-charcoal-100">
-                {posts.map((post) => (
-                  <tr key={post.id} className="hover:bg-charcoal-50 transition-colors">
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm font-semibold text-charcoal-900">{post.title.length > 50 ? post.title.substring(0, 50) + '...' : post.title}</div>
-                      <div className="text-xs text-charcoal-500 mt-1">/{post.slug}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-charcoal-600">
-                        {new Date(post.date).toLocaleDateString('id-ID')}
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap">
-                      <div className="text-sm text-charcoal-600">{post.author}</div>
-                    </td>
-                    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                      <div className="flex justify-end gap-3">
-                        <Link href={`/admin/editor/${post.id}`} className="text-forest-600 hover:text-forest-800" title="Edit">
-                          <Edit className="w-5 h-5" />
-                        </Link>
-                        {/* We will implement delete via API later, for now we just show it */}
-                        <button className="text-red-600 hover:text-red-800" title="Hapus">
-                          <Trash2 className="w-5 h-5" />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {posts.map((post) => (
+            <article key={post.id} className="bg-white rounded-2xl shadow-sm border border-charcoal-200 overflow-hidden flex flex-col transition-transform hover:-translate-y-1 hover:shadow-md">
+              <div className="relative h-48 w-full overflow-hidden bg-charcoal-100">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6 flex flex-col flex-grow">
+                <div className="text-xs text-charcoal-500 mb-2">
+                  {new Date(post.date).toLocaleDateString('id-ID')} • {post.author}
+                </div>
+                <h2 className="text-lg font-bold text-charcoal-900 mb-2 line-clamp-2">
+                  {post.title}
+                </h2>
+                <div className="text-xs text-charcoal-400 mb-6 truncate">/{post.slug}</div>
                 
-                {posts.length === 0 && (
-                  <tr>
-                    <td colSpan={4} className="px-6 py-8 text-center text-charcoal-500">
-                      Belum ada artikel. Silakan buat artikel pertama Anda.
-                    </td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </div>
+                <div className="mt-auto border-t border-charcoal-100 pt-4 flex justify-between items-center">
+                  <Link 
+                    href={`/admin/editor/${post.id}`} 
+                    className="inline-flex items-center text-sm font-semibold text-forest-600 hover:text-forest-700 transition-colors"
+                  >
+                    <Edit className="w-4 h-4 mr-1.5" /> Edit
+                  </Link>
+                  <button className="inline-flex items-center text-sm font-semibold text-red-500 hover:text-red-700 transition-colors">
+                    <Trash2 className="w-4 h-4 mr-1.5" /> Hapus
+                  </button>
+                </div>
+              </div>
+            </article>
+          ))}
+          
+          {posts.length === 0 && (
+            <div className="col-span-full py-12 text-center text-charcoal-500 bg-white rounded-2xl border border-charcoal-200">
+              Belum ada artikel. Silakan buat artikel pertama Anda.
+            </div>
+          )}
         </div>
 
       </div>
