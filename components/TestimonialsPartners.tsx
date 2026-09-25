@@ -6,7 +6,7 @@ import { Star, Quote, Building2 } from 'lucide-react';
 
 export default function TestimonialsPartners({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const partners = [
-    { name: 'Janji Jiwa', type: 'Kuliner Modern', logo: '/assets/canva/Client (1).png' },
+    // { name: 'Janji Jiwa', type: 'Kuliner Modern', logo: '/assets/canva/Client (1).png' }, // Disembunyikan sementara karena belum deal
     { name: 'Juragan Aqiqah', type: 'Katering & HORECA', logo: '/assets/canva/Client (2).png' },
     { name: 'Khasanah Sari Bakery', type: 'Industri Bakery', logo: '/assets/canva/Client (3).png' },
     { name: 'PT. Kencana Anakmas Lestari', type: 'Korporasi Pangan', logo: '/assets/canva/Client (4).png' },
