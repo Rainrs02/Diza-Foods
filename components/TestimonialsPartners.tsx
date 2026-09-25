@@ -6,7 +6,7 @@ import { Star, Quote, Building2 } from 'lucide-react';
 
 export default function TestimonialsPartners({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' | 'bg2' | 'none' }) {
   const partners = [
-    { name: 'Kaya Happy Baker', type: 'Industri Bakery', logo: '/assets/canva/kaya-happy-baker.jpg' },
+    { name: 'Kaya Happy Baker', type: 'Industri Bakery', logo: '/assets/canva/Kaya Happy Baker.jpeg' },
     { name: 'Juragan Aqiqah', type: 'Katering & HORECA', logo: '/assets/canva/Client (2).png' },
     { name: 'Khasanah Sari Bakery', type: 'Industri Bakery', logo: '/assets/canva/Client (3).png' },
     { name: 'PT. Kencana Anakmas Lestari', type: 'Korporasi Pangan', logo: '/assets/canva/Client (4).png' },
