@@ -9,13 +9,13 @@ export default function QualityLegality({ bgOverlay = 'none' }: { bgOverlay?: 'b
   const certifications = [
     {
       title: 'Sertifikat Halal',
-      status: 'On Proses',
+      status: 'Approved',
       desc: 'Jaminan kehalalan bahan baku & alur produksi sesuai standar syariat.',
       icon: '/assets/canva/Halal.png',
     },
     {
       title: 'Sertifikasi SLHS',
-      status: 'On Proses',
+      status: 'Approved',
       desc: 'Bukti resmi dari Dinas Kesehatan bahwa tempat pengolahan pangan telah memenuhi standar kebersihan, kesehatan, dan keamanan makanan.',
       icon: '/assets/canva/logo SLhs.png',
     },
