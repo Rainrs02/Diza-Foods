@@ -62,7 +62,7 @@ export const useInquiryStore = create<InquiryState>((set, get) => ({
   getWhatsAppUrl: () => {
     const { category, packaging, quantity, customFormula, clientName, companyName, phone, notes } = get();
     
-    const phoneNumber = '6289540523332'; // Nomor resmi PT Diza Pangan Bersama
+    const phoneNumber = '62895405233323'; // Nomor resmi PT Diza Pangan Bersama
     
     let message = `Halo Tim PT Diza Pangan Bersama (Diza Foods),\n\n`;
     message += `Saya bermaksud mengajukan Konsultasi Layanan Maklon Pangan Sterilisasi (Retort).\n\n`;
@@ -83,6 +83,6 @@ export const useInquiryStore = create<InquiryState>((set, get) => ({
     message += `\nMohon informasi ketersediaan jadwal diskusi teknis dan penawaran harga. Terima kasih.`;
 
     const encodedMessage = encodeURIComponent(message);
-    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+    return `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodedMessage}`;
   },
 }));

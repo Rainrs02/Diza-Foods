@@ -86,7 +86,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-sage-400 flex-shrink-0" />
                 <div>
                   <span className="font-semibold text-white">WhatsApp B2B:</span>{' '}
-                  <a href="https://wa.me/6289540523332" className="hover:text-white transition-colors">+62 8954 0523 3323</a>
+                  <a href="https://api.whatsapp.com/send?phone=62895405233323" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">+62 8954 0523 3323</a>
                 </div>
               </div>
 

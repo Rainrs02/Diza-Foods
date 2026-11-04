@@ -97,7 +97,7 @@ export default function FAQSection({ bgOverlay = 'none' }: { bgOverlay?: 'bg1' |
           <p className="text-xs text-charcoal-600">Tim R&amp;D dan Konsultan Maklon kami siap berdiskusi secara langsung melalui WhatsApp.</p>
           <div>
             <a
-              href="https://wa.me/62895405233323"
+              href="https://api.whatsapp.com/send?phone=62895405233323"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center px-5 py-2.5 rounded-xl bg-forest-700 text-white font-bold text-xs hover:bg-forest-800 transition-colors shadow-md"

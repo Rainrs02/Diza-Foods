@@ -148,7 +148,7 @@ export default function Navbar() {
                   Konsultasi Sekarang
                 </Link>
                 <a
-                  href="https://wa.me/62895405233323"
+                  href="https://api.whatsapp.com/send?phone=62895405233323"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center px-5 py-3 rounded-lg text-sm font-bold text-forest-700 bg-forest-50 border border-forest-200 hover:bg-forest-100"

@@ -81,7 +81,7 @@ export default function KontakPage() {
               </div>
 
               <a
-                href="https://wa.me/62895405233323?text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20jadwal%20kunjungan%20pabrik%20/%20konsultasi%20maklon."
+                href="https://api.whatsapp.com/send?phone=62895405233323&text=Halo%20Tim%20Diza%20Foods,%20saya%20ingin%20jadwal%20kunjungan%20pabrik%20/%20konsultasi%20maklon."
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-md flex items-center justify-center space-x-2"
