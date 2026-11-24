@@ -165,7 +165,7 @@ export default function LinksView() {
         </motion.div>
 
         {/* ═══════════════════════════════════════════════════════════════════ */}
-        {/* LINKS STACK (CLEAN LINKTREE PILLS)                                  */}
+        {/* LINKS STACK (CLEAN LINKTREE PILLS DENGAN AKSEN LIGHT)              */}
         {/* URUTAN:                                                            */}
         {/* 1. Website Utama                                                   */}
         {/* 2. WA Admin (Online Shop)                                          */}
@@ -180,12 +180,12 @@ export default function LinksView() {
           <div className="relative group w-full">
             <Link
               href="/"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
-              <div className="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center flex-shrink-0 text-white">
+              <div className="w-9 h-9 rounded-xl bg-forest-800 flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <Globe className="w-5 h-5 text-emerald-300" />
               </div>
-              <span className="font-semibold text-sm sm:text-[15px] text-center flex-grow px-2 text-white">
+              <span className="font-bold text-sm sm:text-[15px] text-center flex-grow px-2 text-charcoal-900">
                 Kunjungi Website Resmi
               </span>
               <button
@@ -195,7 +195,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   setActiveMenuId(activeMenuId === 'web' ? null : 'web');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 aria-label="Pilihan tautan website"
               >
                 <MoreVertical className="w-4 h-4" />
@@ -204,17 +204,17 @@ export default function LinksView() {
 
             {/* Sub-menu popover */}
             {activeMenuId === 'web' && (
-              <div className="absolute right-3 top-16 z-30 w-48 bg-[#0f281e] rounded-xl shadow-2xl border border-emerald-500/30 py-1.5 text-xs text-charcoal-200 text-left animate-in fade-in zoom-in-95 duration-150 backdrop-blur-xl">
+              <div className="absolute right-3 top-16 z-30 w-48 bg-white rounded-xl shadow-2xl border border-charcoal-200 py-1.5 text-xs text-charcoal-700 text-left animate-in fade-in zoom-in-95 duration-150">
                 <Link
                   href="/katalog-produk"
-                  className="block px-3.5 py-2 hover:bg-emerald-600/20 hover:text-emerald-300 font-medium"
+                  className="block px-3.5 py-2 hover:bg-emerald-50 hover:text-emerald-800 font-medium"
                   onClick={() => setActiveMenuId(null)}
                 >
                   Buka Katalog Produk
                 </Link>
                 <Link
                   href="/layanan-maklon-retort"
-                  className="block px-3.5 py-2 hover:bg-emerald-600/20 hover:text-emerald-300 font-medium"
+                  className="block px-3.5 py-2 hover:bg-emerald-50 hover:text-emerald-800 font-medium"
                   onClick={() => setActiveMenuId(null)}
                 >
                   Layanan Maklon Retort
@@ -222,7 +222,7 @@ export default function LinksView() {
                 <button
                   type="button"
                   onClick={() => handleCopyLink('https://dizafoods.co.id', 'Website')}
-                  className="w-full text-left px-3.5 py-2 hover:bg-emerald-600/20 hover:text-emerald-300 font-medium border-t border-white/10"
+                  className="w-full text-left px-3.5 py-2 hover:bg-emerald-50 hover:text-emerald-800 font-medium border-t border-charcoal-100"
                 >
                   Salin Tautan Website
                 </button>
@@ -236,10 +236,10 @@ export default function LinksView() {
               href={getWhatsAppApiUrl('online-shop', ONLINE_SHOP_PRESETS[0].text)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
               {/* WhatsApp Icon */}
-              <div className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.78 14.24c-.24.68-1.4 1.25-1.94 1.33-.5.07-1.14.1-3.32-.8-2.78-1.15-4.57-3.98-4.71-4.17-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.56-.35.75-.35.19 0 .37 0 .53.01.17.01.4.06.62.53.23.49.78 1.9.85 2.04.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.3.35-.43.47-.14.13-.29.28-.13.56.16.28.73 1.2 1.56 1.94 1.07.96 1.98 1.26 2.26 1.4.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.64-.14.26.09 1.66.78 1.94.92.29.14.48.21.55.33.07.12.07.7-.17 1.38z" />
                 </svg>
@@ -247,10 +247,10 @@ export default function LinksView() {
 
               {/* Title & subtitle */}
               <div className="flex flex-col items-center justify-center flex-grow px-2">
-                <span className="font-semibold text-sm sm:text-[15px] text-white">
+                <span className="font-bold text-sm sm:text-[15px] text-charcoal-900">
                   WhatsApp Admin (Online Shop)
                 </span>
-                <span className="text-[10px] text-emerald-400 font-medium">
+                <span className="text-[10px] text-emerald-700 font-semibold">
                   Pesanan Retail, Stok &amp; Promo
                 </span>
               </div>
@@ -263,7 +263,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   openModal('online-shop');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 title="Kustomisasi Pesan WhatsApp"
                 aria-label="Kustomisasi pesan WhatsApp Online Shop"
               >
@@ -278,10 +278,10 @@ export default function LinksView() {
               href={getWhatsAppApiUrl('b2b', B2B_PRESETS[0].text)}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
               {/* WhatsApp Icon */}
-              <div className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#25D366] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.78 14.24c-.24.68-1.4 1.25-1.94 1.33-.5.07-1.14.1-3.32-.8-2.78-1.15-4.57-3.98-4.71-4.17-.14-.19-1.14-1.52-1.14-2.9 0-1.38.72-2.06.98-2.34.25-.28.56-.35.75-.35.19 0 .37 0 .53.01.17.01.4.06.62.53.23.49.78 1.9.85 2.04.07.14.12.31.02.5-.09.19-.14.31-.28.47-.14.16-.3.35-.43.47-.14.13-.29.28-.13.56.16.28.73 1.2 1.56 1.94 1.07.96 1.98 1.26 2.26 1.4.28.14.44.12.6-.07.17-.19.71-.83.9-1.11.19-.28.38-.23.64-.14.26.09 1.66.78 1.94.92.29.14.48.21.55.33.07.12.07.7-.17 1.38z" />
                 </svg>
@@ -289,10 +289,10 @@ export default function LinksView() {
 
               {/* Title & subtitle */}
               <div className="flex flex-col items-center justify-center flex-grow px-2">
-                <span className="font-semibold text-sm sm:text-[15px] text-white">
+                <span className="font-bold text-sm sm:text-[15px] text-charcoal-900">
                   WhatsApp Konsultan B2B (Maklon)
                 </span>
-                <span className="text-[10px] text-emerald-400 font-medium">
+                <span className="text-[10px] text-emerald-700 font-semibold">
                   Sterilisasi Retort, R&amp;D Formula &amp; MOQ
                 </span>
               </div>
@@ -305,7 +305,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   openModal('b2b');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 title="Kustomisasi Pesan WhatsApp"
                 aria-label="Kustomisasi pesan WhatsApp Konsultan B2B"
               >
@@ -320,16 +320,16 @@ export default function LinksView() {
               href="https://www.tiktok.com/@dizafoods"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
               {/* TikTok Icon */}
-              <div className="w-9 h-9 rounded-xl bg-black flex items-center justify-center flex-shrink-0 text-white shadow-sm border border-white/20">
+              <div className="w-9 h-9 rounded-xl bg-black flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
                   <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.12V9.42a6.3 6.3 0 0 0-.86-.06 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.34-6.34V8.45c1.47 1.05 3.26 1.67 5.2 1.69v-3.45a4.83 4.83 0 0 1-1.43 0z"/>
                 </svg>
               </div>
 
-              <span className="font-semibold text-sm sm:text-[15px] text-center flex-grow px-2 text-white">
+              <span className="font-bold text-sm sm:text-[15px] text-center flex-grow px-2 text-charcoal-900">
                 TikTok @dizafoods
               </span>
 
@@ -340,7 +340,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   handleCopyLink('https://www.tiktok.com/@dizafoods', 'TikTok');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 title="Salin tautan TikTok"
                 aria-label="Salin tautan TikTok"
               >
@@ -355,16 +355,16 @@ export default function LinksView() {
               href="https://shopee.co.id/dizafoods"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
               {/* Shopee Brand Icon */}
-              <div className="w-9 h-9 rounded-xl bg-[#EE4D2D] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-[#EE4D2D] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M19.9 6.2c-.4-.5-1-.8-1.7-.8h-2.1c-.2-1.9-1.8-3.4-3.8-3.4s-3.6 1.5-3.8 3.4H6.4c-.7 0-1.3.3-1.7.8-.4.5-.6 1.1-.4 1.8l1.7 11.2c.2 1.3 1.3 2.3 2.6 2.3h10.4c1.3 0 2.4-1 2.6-2.3l1.7-11.2c.2-.7 0-1.3-.4-1.8zm-7.6-2.2c1 0 1.9.7 2 1.7H10.3c.1-1 1-1.7 2-1.7zm3.1 11.5c-.3.6-.9 1-1.6 1.2v.7c0 .3-.2.5-.5.5s-.5-.2-.5-.5v-.7c-1.3-.2-2-1.1-2-2.1 0-.3.2-.5.5-.5s.5.2.5.5c0 .6.4 1.1 1.2 1.2v-2.8c-.8-.2-1.8-.7-1.8-1.8 0-1 .7-1.7 1.8-1.9v-.7c0-.3.2-.5.5-.5s.5.2.5.5v.7c1.1.2 1.8 1 1.8 1.9 0 .3-.2.5-.5.5s-.5-.2-.5-.5c0-.5-.4-.9-1-.9v2.7c.9.3 1.8.7 1.8 1.8 0 .4-.1.7-.3 1z" />
                 </svg>
               </div>
 
-              <span className="font-semibold text-sm sm:text-[15px] text-center flex-grow px-2 text-white">
+              <span className="font-bold text-sm sm:text-[15px] text-center flex-grow px-2 text-charcoal-900">
                 Shopee Official Store
               </span>
 
@@ -375,7 +375,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   handleCopyLink('https://shopee.co.id/dizafoods', 'Shopee');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 title="Salin tautan Shopee"
                 aria-label="Salin tautan Shopee"
               >
@@ -390,16 +390,16 @@ export default function LinksView() {
               href="https://www.instagram.com/diza.foods/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-[#142920]/90 hover:bg-[#1b362a] border border-emerald-500/20 text-white shadow-md hover:shadow-lg hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 backdrop-blur-md"
+              className="w-full flex items-center justify-between py-4 px-4 sm:px-5 rounded-2xl bg-white hover:bg-emerald-50 text-charcoal-900 shadow-xl shadow-black/25 hover:shadow-2xl hover:scale-[1.015] active:scale-[0.99] transition-all duration-200 border border-white/80"
             >
               {/* Instagram Gradient Icon */}
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center flex-shrink-0 text-white shadow-sm">
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] flex items-center justify-center flex-shrink-0 text-white shadow-xs">
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
               </div>
 
-              <span className="font-semibold text-sm sm:text-[15px] text-center flex-grow px-2 text-white">
+              <span className="font-bold text-sm sm:text-[15px] text-center flex-grow px-2 text-charcoal-900">
                 Instagram @diza.foods
               </span>
 
@@ -410,7 +410,7 @@ export default function LinksView() {
                   e.stopPropagation();
                   handleCopyLink('https://www.instagram.com/diza.foods/', 'Instagram');
                 }}
-                className="p-1.5 rounded-lg text-white/50 hover:text-white transition-colors"
+                className="p-1.5 rounded-lg text-charcoal-400 hover:text-charcoal-800 hover:bg-charcoal-100 transition-colors"
                 title="Salin tautan Instagram"
                 aria-label="Salin tautan Instagram"
               >
